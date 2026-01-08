@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub for Dummies - Workshop Presentation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/night.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 {
+            text-transform: none;
+        }
+        .reveal .slides section .fragment.highlight-current-blue {
+            opacity: 1;
+            visibility: inherit;
+        }
+        .reveal .slides section .fragment.highlight-current-blue.current-fragment {
+            color: #42affa;
+        }
+        .reveal ul {
+            font-size: 0.9em;
+        }
+        .reveal .small {
+            font-size: 0.7em;
+        }
+        .reveal .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        .reveal .analogy {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #42affa;
+        }
+        .reveal .success {
+            color: #50fa7b;
+        }
+        .reveal .warning {
+            color: #ffb86c;
+        }
+        .reveal .danger {
+            color: #ff5555;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Title Slide -->
+            <section>
+                <h1>GitHub for Dummies</h1>
+                <h3>From Zero to GitHub Hero</h3>
+                <p>A hands-on workshop for everyone</p>
+                <p class="small">Press Space or → to navigate</p>
+            </section>
+
+            <!-- Welcome & Overview -->
+            <section>
+                <section>
+                    <h2>Welcome! 👋</h2>
+                    <h3>Today's Goals</h3>
+                    <ul>
+                        <li class="fragment">Learn what GitHub is and why it matters</li>
+                        <li class="fragment">Create your first repository</li>
+                        <li class="fragment">Master the basics: commits, branches, pull requests</li>
+                        <li class="fragment">Collaborate with others</li>
+                        <li class="fragment">Discover practical applications</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Workshop Agenda</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>Part 1 (45 min)</h4>
+                            <ul class="small">
+                                <li>What is GitHub?</li>
+                                <li>Account Setup</li>
+                                <li>First Repository</li>
+                                <li>Branches</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Part 2 (45 min)</h4>
+                            <ul class="small">
+                                <li>Pull Requests</li>
+                                <li>Collaboration</li>
+                                <li>Issues & Projects</li>
+                                <li>Real-world Uses</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="fragment" style="margin-top: 2rem;">🎯 Remember: No "dumb" questions!</p>
+                </section>
+
+                <section>
+                    <h3>Icebreaker</h3>
+                    <h2>What do you hope to learn about GitHub today?</h2>
+                    <p class="small fragment">(Share in chat or raise your hand)</p>
+                </section>
+            </section>
+
+            <!-- What is GitHub? -->
+            <section>
+                <section>
+                    <h2>What is GitHub?</h2>
+                </section>
+
+                <section>
+                    <h3>Version Control Explained</h3>
+                    <div class="analogy">
+                        <p><strong>Like "Track Changes" on steroids</strong></p>
+                    </div>
+                    <ul class="fragment" style="margin-top: 2rem;">
+                        <li>Every change is saved</li>
+                        <li>You can go back to any previous version</li>
+                        <li>See who changed what and when</li>
+                        <li>Work on multiple versions at once</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Git vs. GitHub</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>Git</h4>
+                            <ul>
+                                <li>The tool</li>
+                                <li>Tracks changes</li>
+                                <li>Lives on your computer</li>
+                                <li>Command line or GUI</li>
+                            </ul>
+                        </div>
+                        <div class="fragment">
+                            <h4>GitHub</h4>
+                            <ul>
+                                <li>The platform</li>
+                                <li>Hosts projects online</li>
+                                <li>Collaboration features</li>
+                                <li>Web interface</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Real-World Analogies</h3>
+                    <ul>
+                        <li class="fragment"><strong>Google Docs</strong> for code (and other files)</li>
+                        <li class="fragment"><strong>Time machine</strong> for your files</li>
+                        <li class="fragment"><strong>Dropbox + collaboration + history</strong></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>GitHub's Capabilities</h3>
+                    <ul>
+                        <li class="fragment">📁 Store and organize projects</li>
+                        <li class="fragment">⏰ Track changes over time</li>
+                        <li class="fragment">👥 Collaborate with teams</li>
+                        <li class="fragment">🔍 Review and discuss changes</li>
+                        <li class="fragment">🤖 Automate workflows</li>
+                        <li class="fragment">🌟 Showcase projects (portfolio)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Common Use Cases</h3>
+                    <div class="two-column">
+                        <div>
+                            <ul class="small">
+                                <li>Software development teams</li>
+                                <li>Documentation management</li>
+                                <li>Open source projects</li>
+                                <li>Personal project portfolio</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="small">
+                                <li>Project management</li>
+                                <li>Website hosting</li>
+                                <li>Team handbooks</li>
+                                <li>Writing & publishing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Account Creation -->
+            <section>
+                <section>
+                    <h2>Let's Create Your Account!</h2>
+                    <p>Follow along on your laptop</p>
+                </section>
+
+                <section>
+                    <h3>Account Setup Steps</h3>
+                    <ol class="small">
+                        <li>Visit <a href="https://github.com" target="_blank">github.com</a></li>
+                        <li>Click "Sign up"</li>
+                        <li>Enter email address</li>
+                        <li>Create password (strong!)</li>
+                        <li>Choose username (make it professional!)</li>
+                        <li>Verify you're human</li>
+                        <li>Verify email address</li>
+                    </ol>
+                    <p class="fragment" style="margin-top: 2rem;">⚠️ <strong>Username tips:</strong> Professional, memorable, easy to type</p>
+                </section>
+
+                <section>
+                    <h3>Quick Interface Tour</h3>
+                    <ul>
+                        <li class="fragment"><strong>Navigation bar</strong> - Search, notifications, profile</li>
+                        <li class="fragment"><strong>Profile</strong> - Your GitHub identity</li>
+                        <li class="fragment"><strong>Repositories tab</strong> - Your projects</li>
+                        <li class="fragment"><strong>Explore page</strong> - Discover projects</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Repositories -->
+            <section>
+                <section>
+                    <h2>Understanding Repositories</h2>
+                </section>
+
+                <section>
+                    <h3>What is a Repository?</h3>
+                    <div class="analogy">
+                        <p><strong>A project folder with superpowers</strong></p>
+                    </div>
+                    <ul class="fragment" style="margin-top: 2rem;">
+                        <li>Contains all your project files</li>
+                        <li>Tracks complete history of changes</li>
+                        <li>Includes collaboration tools</li>
+                        <li>Can be public or private</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Public vs. Private</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>Public</h4>
+                            <ul class="small">
+                                <li class="success">✓ Anyone can see</li>
+                                <li class="success">✓ Great for portfolio</li>
+                                <li class="success">✓ Open source</li>
+                                <li class="success">✓ Free</li>
+                            </ul>
+                        </div>
+                        <div class="fragment">
+                            <h4>Private</h4>
+                            <ul class="small">
+                                <li class="success">✓ Only you & collaborators</li>
+                                <li class="success">✓ Sensitive projects</li>
+                                <li class="success">✓ Work in progress</li>
+                                <li class="success">✓ Also free! (With limitations)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>README Files</h3>
+                    <p><strong>Your project's front door</strong></p>
+                    <ul class="fragment">
+                        <li>First thing people see</li>
+                        <li>Explains what your project is</li>
+                        <li>Provides instructions</li>
+                        <li>Written in Markdown (.md)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Activity Time! 🚀</h3>
+                    <h4>Create Your First Repository</h4>
+                    <ol class="small">
+                        <li>Click the "+" icon → "New repository"</li>
+                        <li>Name it: <code>my-first-repo</code></li>
+                        <li>Add a description</li>
+                        <li>Choose Public or Private</li>
+                        <li>✅ Check "Add a README file"</li>
+                        <li>Click "Create repository"</li>
+                    </ol>
+                    <p class="fragment" style="margin-top: 1rem;">🎉 Congratulations! You have a repository!</p>
+                </section>
+            </section>
+
+            <!-- Making Changes -->
+            <section>
+                <section>
+                    <h2>Making Your First Changes</h2>
+                </section>
+
+                <section>
+                    <h3>What is a Commit?</h3>
+                    <div class="analogy">
+                        <p><strong>Saving a snapshot with a note</strong></p>
+                    </div>
+                    <p class="fragment" style="margin-top: 2rem;">💾 Save + 📝 Note + ⏰ Timestamp = Commit</p>
+                </section>
+
+                <section>
+                    <h3>Commit Messages Matter!</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4 class="success">✅ Good</h4>
+                            <ul class="small">
+                                <li>"Add contact info to README"</li>
+                                <li>"Fix typo in introduction"</li>
+                                <li>"Update team member list"</li>
+                            </ul>
+                        </div>
+                        <div class="fragment">
+                            <h4 class="danger">❌ Bad</h4>
+                            <ul class="small">
+                                <li>"changes"</li>
+                                <li>"update"</li>
+                                <li>"stuff"</li>
+                                <li>"asdfasdf"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Activity Time! ✏️</h3>
+                    <h4>Edit Your README</h4>
+                    <ol class="small">
+                        <li>Open your README.md file</li>
+                        <li>Click the pencil icon (Edit)</li>
+                        <li>Add some content about yourself</li>
+                        <li>Scroll down to "Commit changes"</li>
+                        <li>Write a clear commit message</li>
+                        <li>Click "Commit changes"</li>
+                    </ol>
+                    <p class="fragment" style="margin-top: 1rem;">🎉 Your first commit!</p>
+                </section>
+
+                <section>
+                    <h3>View Your History</h3>
+                    <ul>
+                        <li>Click on commit count (e.g., "2 commits")</li>
+                        <li>See all changes over time</li>
+                        <li>Click a commit to see what changed</li>
+                        <li>Green = added, Red = removed</li>
+                    </ul>
+                    <p class="fragment" style="margin-top: 2rem;"><strong>This is time travel for your files! 🚀</strong></p>
+                </section>
+            </section>
+
+            <!-- Break Slide -->
+            <section>
+                <h2>Break Time! ☕</h2>
+                <p>10 minutes</p>
+                <ul class="small">
+                    <li>Stretch</li>
+                    <li>Grab water/coffee</li>
+                    <li>Ask questions</li>
+                    <li>Catch up if needed</li>
+                </ul>
+            </section>
+
+            <!-- Branches -->
+            <section>
+                <section>
+                    <h2>Branches: Working Safely</h2>
+                </section>
+
+                <section>
+                    <h3>What is a Branch?</h3>
+                    <div class="analogy">
+                        <p><strong>A parallel universe for your project</strong></p>
+                    </div>
+                    <ul class="fragment" style="margin-top: 2rem;">
+                        <li>Experiment without breaking things</li>
+                        <li>Work on features in isolation</li>
+                        <li>Multiple people work simultaneously</li>
+                        <li>Main branch stays safe</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Branch Analogy: Writing a Book</h3>
+                    <ul>
+                        <li><strong>Main branch</strong> = Published manuscript</li>
+                        <li><strong>Feature branch</strong> = Draft of new chapter</li>
+                        <li>Work on draft without changing published version</li>
+                        <li>When happy, merge it into the manuscript</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Activity Time! 🌿</h3>
+                    <h4>Create Your First Branch</h4>
+                    <ol class="small">
+                        <li>Click the branch dropdown (says "main")</li>
+                        <li>Type a new branch name: <code>add-contact-info</code></li>
+                        <li>Click "Create branch"</li>
+                        <li>You're now on the new branch!</li>
+                        <li>Make some changes</li>
+                        <li>Commit the changes</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3>The Magic Moment ✨</h3>
+                    <ol>
+                        <li>Switch to your feature branch → See your changes</li>
+                        <li>Switch to main → Changes disappear</li>
+                        <li>Switch back → Changes reappear!</li>
+                    </ol>
+                    <p class="fragment" style="margin-top: 2rem;"><strong>This is the power of branches!</strong></p>
+                </section>
+            </section>
+
+            <!-- Pull Requests -->
+            <section>
+                <section>
+                    <h2>Pull Requests</h2>
+                    <h3>The Professional Way to Merge</h3>
+                </section>
+
+                <section>
+                    <h3>What is a Pull Request?</h3>
+                    <div class="analogy">
+                        <p><strong>"Hey team, can you review my work before we publish?"</strong></p>
+                    </div>
+                    <ul class="fragment" style="margin-top: 2rem;">
+                        <li>Propose changes from one branch to another</li>
+                        <li>Team reviews and discusses</li>
+                        <li>Quality control</li>
+                        <li>Knowledge sharing</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Pull Request Workflow</h3>
+                    <ol class="small">
+                        <li class="fragment">Create branch</li>
+                        <li class="fragment">Make changes and commit</li>
+                        <li class="fragment">Open Pull Request</li>
+                        <li class="fragment">Review and discuss</li>
+                        <li class="fragment">Make requested changes</li>
+                        <li class="fragment">Merge to main</li>
+                        <li class="fragment">Delete branch (cleanup)</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3>Activity Time! 🔀</h3>
+                    <h4>Create Your First Pull Request</h4>
+                    <ol class="small">
+                        <li>Click "Pull requests" tab</li>
+                        <li>Click "New pull request"</li>
+                        <li>Select your branch to merge into main</li>
+                        <li>Review the changes</li>
+                        <li>Click "Create pull request"</li>
+                        <li>Add title and description</li>
+                        <li>Click "Create pull request"</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3>Merge Your PR</h3>
+                    <ol class="small">
+                        <li>Review the "Files changed" tab</li>
+                        <li>Add a comment on a line (optional)</li>
+                        <li>Go back to "Conversation" tab</li>
+                        <li>Click "Merge pull request"</li>
+                        <li>Confirm the merge</li>
+                        <li>Delete the branch</li>
+                    </ol>
+                    <p class="fragment" style="margin-top: 1rem;">🎉 Your changes are now in main!</p>
+                </section>
+            </section>
+
+            <!-- Collaboration -->
+            <section>
+                <section>
+                    <h2>Collaboration: Working with Others</h2>
+                </section>
+
+                <section>
+                    <h3>GitHub Issues</h3>
+                    <p><strong>Your project's to-do list</strong></p>
+                    <ul class="fragment">
+                        <li>📋 Track tasks</li>
+                        <li>🐛 Report bugs</li>
+                        <li>💡 Suggest features</li>
+                        <li>❓ Ask questions</li>
+                        <li>💬 Discuss ideas</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Partner Exercise! 👥</h3>
+                    <h4>Find a Partner</h4>
+                    <ol class="small">
+                        <li>Exchange repository URLs</li>
+                        <li>Visit your partner's repository</li>
+                        <li>Create an issue with a suggestion</li>
+                        <li>Use @mention to notify them</li>
+                        <li>Respond to the issue they created for you</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3>Forking</h3>
+                    <p><strong>Make your own copy of someone else's project</strong></p>
+                    <ul class="fragment">
+                        <li>Contributing to projects you don't own</li>
+                        <li>Experimenting with others' code</li>
+                        <li>Creating your own version</li>
+                    </ul>
+                    <p class="fragment" style="margin-top: 2rem;">Fork → Make changes → Pull Request back</p>
+                </section>
+            </section>
+
+            <!-- Practical Applications -->
+            <section>
+                <section>
+                    <h2>GitHub Beyond Code</h2>
+                </section>
+
+                <section>
+                    <h3>Real-World Uses</h3>
+                    <ul class="small">
+                        <li class="fragment">📚 <strong>Documentation teams</strong> - Track policy changes</li>
+                        <li class="fragment">✍️ <strong>Writers</strong> - Collaborate on books/articles</li>
+                        <li class="fragment">🎨 <strong>Designers</strong> - Manage design specs</li>
+                        <li class="fragment">📊 <strong>Data teams</strong> - Version datasets</li>
+                        <li class="fragment">📋 <strong>Project managers</strong> - Track requirements</li>
+                        <li class="fragment">🏫 <strong>Educators</strong> - Share course materials</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>GitHub Projects</h3>
+                    <p><strong>Built-in kanban boards</strong></p>
+                    <ul>
+                        <li>Visual task management</li>
+                        <li>Drag-and-drop interface</li>
+                        <li>Link issues and PRs</li>
+                        <li>Free project boards</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>GitHub Pages</h3>
+                    <p><strong>Free website hosting!</strong></p>
+                    <ul>
+                        <li>Host directly from repository</li>
+                        <li>Perfect for portfolios</li>
+                        <li>Documentation sites</li>
+                        <li>Project landing pages</li>
+                    </ul>
+                    <p class="fragment" style="margin-top: 1rem;"><code>yourusername.github.io</code></p>
+                </section>
+            </section>
+
+            <!-- Next Steps -->
+            <section>
+                <section>
+                    <h2>What's Next?</h2>
+                </section>
+
+                <section>
+                    <h3>Continue Learning</h3>
+                    <ul>
+                        <li>🎓 <strong>GitHub Skills</strong> - skills.github.com</li>
+                        <li>📖 <strong>GitHub Docs</strong> - docs.github.com</li>
+                        <li>💬 <strong>Community Forum</strong> - github.community</li>
+                        <li>🎥 <strong>GitHub YouTube</strong> - youtube.com/github</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Practice Suggestions</h3>
+                    <ul>
+                        <li class="fragment">Create a personal portfolio repository</li>
+                        <li class="fragment">Contribute to open source</li>
+                        <li class="fragment">Use GitHub for your next team project</li>
+                        <li class="fragment">Build a GitHub Pages site</li>
+                        <li class="fragment">Explore GitHub Projects for task management</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Next Skills to Learn</h3>
+                    <ul class="small">
+                        <li>Advanced Markdown formatting</li>
+                        <li>GitHub Projects (kanban boards)</li>
+                        <li>GitHub Pages (free websites)</li>
+                        <li>Git command line basics</li>
+                        <li>GitHub Actions (automation)</li>
+                        <li>Collaborating on larger teams</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Wrap Up -->
+            <section>
+                <section>
+                    <h2>You Did It! 🎉</h2>
+                    <h3>What You Learned Today</h3>
+                    <ul>
+                        <li class="fragment">✅ What GitHub is and why it's useful</li>
+                        <li class="fragment">✅ Creating repositories</li>
+                        <li class="fragment">✅ Making commits</li>
+                        <li class="fragment">✅ Working with branches</li>
+                        <li class="fragment">✅ Creating pull requests</li>
+                        <li class="fragment">✅ Collaborating with others</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Key Takeaway</h2>
+                    <div class="analogy">
+                        <h3>"Use it or lose it!"</h3>
+                        <p>The best way to learn GitHub is to use it regularly</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Q&A</h2>
+                    <h3>Questions?</h3>
+                    <p>Now's your chance to ask anything!</p>
+                </section>
+
+                <section>
+                    <h2>Thank You! 🙏</h2>
+                    <p>Keep learning and building!</p>
+                    <br>
+                    <p class="small">Workshop materials:<br>
+                    <a href="https://github.com/yourusername/github-workshop">github.com/yourusername/github-workshop</a></p>
+                    <br>
+                    <p class="small">Remember: Everyone was a beginner once.<br>You've got this! 💪</p>
+                </section>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/zoom/zoom.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            center: true,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            progress: true,
+            controls: true,
+            controlsTutorial: true,
+            keyboard: true,
+            overview: true,
+            touch: true,
+            loop: false,
+            rtl: false,
+            navigationMode: 'default',
+            shuffle: false,
+            fragments: true,
+            fragmentInURL: true,
+            embedded: false,
+            help: true,
+            showNotes: false,
+            autoPlayMedia: null,
+            preloadIframes: null,
+            autoSlide: 0,
+            autoSlideStoppable: true,
+            mouseWheel: false,
+            hideInactiveCursor: true,
+            hideCursorTime: 5000,
+            previewLinks: false,
+            plugins: [ RevealHighlight, RevealNotes, RevealZoom ]
+        });
+    </script>
+</body>
+</html>
