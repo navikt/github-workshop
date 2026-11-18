@@ -1,41 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub from Scratch - Workshop Presentation</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/night.css">
+    <link rel="stylesheet" href="https://cdn.nav.no/aksel/@navikt/ds-css/8.23.0/index.min.css">
     <style>
+        :root {
+            --r-background-color: var(--ax-bg-default);
+            --r-main-color: var(--ax-text-neutral);
+            --r-main-font: var(--ax-font-family);
+            --r-main-font-size: calc(var(--ax-font-size-large) * 2);
+            --r-heading-font: var(--ax-font-family);
+            --r-heading-font-weight: var(--ax-font-weight-bold);
+            --r-link-color: var(--ax-text-accent);
+        }
+        .reveal-viewport {
+            background: var(--r-background-color);
+            color: var(--r-main-color);
+        }
+        .reveal {
+            font-family: var(--r-main-font);
+            font-size: var(--r-main-font-size);
+            color: var(--r-main-color);
+        }
+        .reveal .slides section {
+            line-height: calc(var(--ax-font-line-height-large) * 2);
+        }
         .reveal h1, .reveal h2, .reveal h3 {
+            margin: 0 0 var(--ax-space-24);
+            color: var(--ax-text-neutral);
+            font-family: var(--r-heading-font);
+            font-weight: var(--r-heading-font-weight);
             text-transform: none;
         }
+        .reveal h1 {
+            font-size: calc(var(--ax-font-size-heading-2xlarge) * 2);
+            line-height: calc(var(--ax-font-line-height-heading-2xlarge) * 2);
+        }
+        .reveal h2 {
+            font-size: calc(var(--ax-font-size-heading-2xlarge) * 1.5);
+            line-height: calc(var(--ax-font-line-height-heading-2xlarge) * 1.5);
+        }
+        .reveal h3 {
+            font-size: calc(var(--ax-font-size-heading-large) * 1.5);
+            line-height: calc(var(--ax-font-line-height-heading-large) * 1.5);
+        }
+        .reveal p, .reveal figure {
+            margin: var(--ax-space-24) 0;
+        }
         .reveal ul, .reveal ol {
-            font-size: 0.85em;
+            display: inline-block;
+            margin: 0 0 0 var(--ax-space-32);
+            text-align: left;
+            list-style-position: outside;
+        }
+        .reveal ul {
+            list-style-type: disc;
+        }
+        .reveal ol {
+            list-style-type: decimal;
+        }
+        .reveal strong {
+            font-weight: var(--ax-font-weight-bold);
         }
         .reveal .small, .reveal figcaption {
-            font-size: 0.65em;
+            font-size: calc(var(--ax-font-size-large) * 1.5);
+            line-height: calc(var(--ax-font-line-height-large) * 1.5);
+        }
+        .reveal a {
+            color: var(--r-link-color);
+            text-decoration: underline;
+            text-underline-offset: 0.15em;
+        }
+        .reveal a:hover {
+            text-decoration-thickness: 0.1em;
+        }
+        .reveal a:focus-visible, .reveal button:focus-visible {
+            outline: medium solid var(--ax-border-focus);
+            outline-offset: var(--ax-space-8);
+        }
+        .reveal .controls, .reveal .progress {
+            color: var(--ax-text-accent);
+        }
+        .reveal .progress {
+            background: var(--ax-bg-neutral-soft);
         }
         .reveal .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: var(--ax-space-32);
         }
-        .reveal .analogy, .reveal .step {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 8px;
-            border: 2px solid #42affa;
+        .reveal .step {
+            background: var(--ax-bg-neutral-soft);
+            padding: var(--ax-space-16);
+            border-radius: var(--ax-radius-8);
+            border: thin solid var(--ax-border-accent);
         }
         .reveal .meme {
             display: block;
             max-width: 70%;
-            max-height: 260px;
+            max-height: calc(var(--ax-space-32) * 8);
             width: auto;
             height: auto;
             margin: 0 auto;
-            border-radius: 8px;
+            border-radius: var(--ax-radius-8);
         }
         .reveal .task {
             text-align: left;
@@ -44,47 +114,71 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.6rem;
-            margin: 1.2rem 0;
+            gap: var(--ax-space-8);
+            margin: var(--ax-space-24) 0;
         }
         .reveal .step {
             flex: 1;
             min-width: 0;
-            font-size: 0.75em;
+            font-size: calc(var(--ax-font-size-large) * 1.75);
+            line-height: calc(var(--ax-font-line-height-large) * 1.75);
         }
         .reveal .step strong, .reveal .step span {
             display: block;
         }
         .reveal .step span {
-            font-size: 0.8em;
-            margin-top: 0.5rem;
+            font-size: calc(var(--ax-font-size-large) * 1.5);
+            line-height: calc(var(--ax-font-line-height-large) * 1.5);
+            margin-top: var(--ax-space-8);
         }
         .reveal .demo {
-            color: #9cddff;
-            font-size: 0.65em;
-            border-top: 2px solid currentColor;
-            padding-top: 0.6rem;
+            color: var(--ax-text-accent);
+            font-size: calc(var(--ax-font-size-large) * 1.5);
+            line-height: calc(var(--ax-font-line-height-large) * 1.5);
+            border-top: thin solid var(--ax-border-accent);
+            padding-top: var(--ax-space-8);
         }
         .reveal .branch-diagram {
             display: block;
             width: 100%;
             height: auto;
         }
+        .reveal .branch-diagram path {
+            stroke: var(--ax-border-accent);
+        }
+        .reveal .branch-diagram circle, .reveal .branch-diagram text {
+            fill: var(--ax-text-neutral);
+        }
+        .reveal .branch-diagram text {
+            font-family: var(--ax-font-family);
+            font-size: calc(var(--ax-font-size-heading-large));
+        }
+        .reveal code {
+            font-family: monospace;
+        }
         .reveal .diff {
             text-align: left;
-            font-size: 0.7em;
-            line-height: 1.8;
-            padding: 1rem;
-            background: #222;
+            font-size: calc(var(--ax-font-size-large) * 1.5);
+            line-height: calc(var(--ax-font-line-height-large) * 2);
+            padding: var(--ax-space-16);
+            border-radius: var(--ax-radius-8);
+            background: var(--ax-bg-neutral-soft);
         }
         .reveal .removed {
-            color: #ffb8b8;
+            color: var(--ax-text-danger);
         }
         .reveal .added {
-            color: #b6f5c2;
+            color: var(--ax-text-success);
         }
         .reveal .diagram-key {
-            font-size: 0.7em;
+            font-size: calc(var(--ax-font-size-large) * 1.5);
+            line-height: calc(var(--ax-font-line-height-large) * 1.5);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal *, .reveal *::before, .reveal *::after {
+                animation: none !important;
+                transition: none !important;
+            }
         }
     </style>
 </head>
@@ -388,10 +482,10 @@
                     <svg class="branch-diagram" viewBox="0 0 900 220" role="img" aria-labelledby="branch-title branch-description">
                         <title id="branch-title">A menu draft branches from the current handbook</title>
                         <desc id="branch-description">Main stays unchanged while add-menu records a new menu commit. No merge has happened.</desc>
-                        <path d="M 220 65 H 845 M 400 65 L 500 165 H 845" fill="none" stroke="#9cddff" stroke-width="5"/>
-                        <circle cx="400" cy="65" r="10" fill="#fff"/>
-                        <circle cx="720" cy="165" r="10" fill="#fff"/>
-                        <g fill="#fff" font-family="sans-serif" font-size="28">
+                        <path d="M 220 65 H 845 M 400 65 L 500 165 H 845" fill="none" stroke-width="5"/>
+                        <circle cx="400" cy="65" r="10"/>
+                        <circle cx="720" cy="165" r="10"/>
+                        <g>
                             <text x="15" y="75">main</text>
                             <text x="15" y="175">add-menu</text>
                             <text x="540" y="45">current handbook</text>
@@ -600,12 +694,13 @@
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/zoom/zoom.js"></script>
     <script>
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         Reveal.initialize({
             hash: true,
             center: true,
-            transition: 'slide',
+            transition: prefersReducedMotion ? 'none' : 'slide',
             transitionSpeed: 'default',
-            backgroundTransition: 'fade',
+            backgroundTransition: prefersReducedMotion ? 'none' : 'fade',
             progress: true,
             controls: true,
             controlsTutorial: true,

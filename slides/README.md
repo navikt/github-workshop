@@ -23,7 +23,25 @@ python3 -m http.server 8000
 
 Then open http://localhost:8000/.
 
-**Internet is still required:** Reveal.js, its theme, and its plugins load from a CDN. Local HTML alone is not an offline backup. Rehearse on the presentation device and prepare an offline PDF and exercise copies beforehand.
+**Internet is still required:** Reveal.js and its plugins load from jsDelivr; Aksel CSS and fonts load from Nav CDN. Local HTML alone is not an offline backup. Rehearse on the presentation device and prepare an offline PDF and exercise copies beforehand.
+
+## Aksel styling
+
+The presentation loads the version-pinned Aksel stylesheet directly from Nav CDN:
+
+```html
+<link rel="stylesheet" href="https://cdn.nav.no/aksel/@navikt/ds-css/8.23.0/index.min.css">
+```
+
+It includes design tokens, the Source Sans 3 font, and Aksel's baseline. No React dependency, build step, or copied token definitions are needed. Reveal.js supplies slide layout and navigation; the former Night theme and its Google Fonts imports are removed.
+
+The document uses Aksel's `dark` class on `<html>`. Custom styles use semantic `--ax-*` tokens for backgrounds, text, borders, diff colors, spacing, and radii, including the SVG diagram. Typography uses Aksel's font family, weight, size, and line-height tokens with presentation-scale multipliers to remain readable on a projector. Diagram coordinates and proportional layout remain presentation-specific.
+
+Links are underlined, keyboard focus is visible, and reduced-motion preferences disable slide/background transitions and CSS animations. Added and removed diff lines keep their `+`/`-` symbols rather than relying on color alone.
+
+To change color mode, replace the root `dark` class with `light`; do not swap in hardcoded colors. When upgrading Aksel, update the exact CDN version and verify the referenced tokens together. Nav CDN does not resolve semver ranges.
+
+See Aksel's [CSS-import and CDN documentation](https://aksel.nav.no/grunnleggende/kode/css-import).
 
 ## Controls
 
