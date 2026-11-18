@@ -1,260 +1,66 @@
-# GitHub for Dummies - Workshop Outline
+# GitHub from Scratch - Workshop Outline
 
-**Audience:** Tech and non-tech personnel  
-**Prerequisites:** Laptop only (no prior GitHub knowledge required)
+**Background:** Beginners learn GitHub in the browser by updating one fictional cafe handbook, first alone and then together. Introduce concepts when participants need them, not as a glossary to memorize.
 
----
+**Desired result:** Each participant can create and edit a repository, explain a commit's diff, merge a PR in their own repository, and exchange a contribution through a fork. They can explain why private or internal visibility does not make sensitive content safe to upload.
 
-## Pre-Workshop Setup (15 minutes)
-*While participants are arriving*
+**Participants and roles:** Participants alternate between contributor and maintainer. The facilitator demonstrates, checks understanding, manages time, and assigns pairs or a contribution ring. Assign the facilitator and helpers before the session.
 
-### Materials Needed
-- Projector/screen for demonstrations
-- WiFi access
-- Workshop repository URL (create beforehand)
-- Backup plan for connectivity issues
+**Duration:** 2 hours, including a 10-minute break.
 
-### Facilitator Preparation
-- Create a simple demo repository with sample files
-- Prepare a cheat sheet handout (optional)
-- Test all examples beforehand
+**Agenda:**
 
----
+| Elapsed time | Session | Type | Facilitator notes |
+|---|---|---|---|
+| 00:00-00:15 | Welcome, Git vs. GitHub, and safe practice | Information / discussion | Two-minute origin story; show the outcome without teaching PR mechanics yet. Establish the data rule. |
+| 00:15-00:20 | Account setup | Information / practice | Explain the task; optional quick demo while others start. Leave instructions visible for practice and help. |
+| 00:20-00:25 | Create a repository | Information / practice | Exercise 02, Part 1. Explain repository, README, and visibility at this point. |
+| 00:25-00:35 | Edit/add a file and commit | Information / practice | Exercise 02, Part 2. Show the editor, saved file, and commit message. |
+| 00:35-00:45 | History and recovery | Information / practice | Exercise 02, Part 3. Introduce history and diff using the edit participants just made. |
+| 00:45-00:55 | Independent edit and catch-up | Practice | Exercise 02, Part 4. No live demo first; helpers support setup delays. |
+| 00:55-01:05 | Break | Break | Protect the break. |
+| 01:05-01:25 | Branch and PR in own repository | Information / practice | Exercise 03 (8 min), then 04 (12 min). Check branch isolation before introducing PRs. |
+| 01:25-01:30 | Share links and assign partners | Discussion / coordination | Exercise 05, Part 1. Use the confirmed Slack channel; remind everyone of public visibility and assign recipients. |
+| 01:30-01:50 | Fork, contribute, review, and merge | Information / practice | Fork/edit (8 min), send PR (5 min), review/merge (7 min), each including briefing, optional demo, and work/help. |
+| 01:50-02:00 | Check results, parked questions, reflection | Discussion / decision | Verify the incoming merge, address questions, and choose a dated next practice task. |
 
-## Part 1: Introduction & Setup (30 minutes)
+## Teaching rhythm
 
-### Welcome & Overview (5 minutes)
-- Workshop goals and agenda
-- What we'll build/accomplish today
-- Icebreaker: "What do you hope to learn about GitHub?"
+**Introduce one concept → explain the task → optional demo or independent start → work with instructions visible → verify.**
 
-### What is GitHub? (10 minutes)
-**Key Concepts:**
-- Version control explained (like "Track Changes" on steroids)
-- Git vs. GitHub: The difference
-  - Git = tool for tracking changes
-  - GitHub = platform for hosting and collaborating
-- Real-world analogies:
-  - Google Docs for code
-  - Time machine for your files
-  - Dropbox + collaboration + history
+Activity slides are self-contained: steps, exact practice text, completion check, and timebox. Numbered exercises are optional detailed references. Explain the goal and completion check before the browser demo so participants can start independently. They do not have to watch or wait for the demo.
 
-**GitHub's Capabilities:**
-- Store and organize code/documents
-- Track changes over time
-- Collaborate with teams
-- Review and discuss changes
-- Automate workflows
-- Showcase projects (portfolio)
+Each stage's advertised time includes its briefing, optional demo, and work/help period. Return to the same task slide after the demo, announce the finish time, and leave it projected while the facilitator helps or answers questions. Share the slide URL for independent access during browser demos. If a demo is skipped, give its time to practice. See the [timing table](FACILITATOR-GUIDE.md#demo-and-work-periods).
 
-**Common Use Cases:**
-- Software development teams
-- Documentation management
-- Open source projects
-- Personal project portfolio
-- Project management
-- Website hosting (GitHub Pages)
+| Stage | Introduce now | Visual reinforcement and checkpoint |
+|---|---|---|
+| Welcome | Git tracks versions; GitHub hosts projects and collaboration | Two boxes and a short 2005/2008 timeline. No branch/fork terminology test. |
+| Before uploading | Private is not a promise of secrecy | Upload → history → downloaded copy. Remove the original from the diagram; the other copies remain. |
+| Repository creation | Repository, README, visibility | Show owner/name in the URL and the visibility label. |
+| Editing | Commit | Editor → commit dialog → saved file and commit message. Ask whether typing alone records a commit. |
+| History | History and diff | Compare the typo and correction; point to `+` and `-`. Ask whether the correction erased the old commit. |
+| Own PR, first step | Branch as a separate draft | Switch draft → main → draft. Ask whether the draft edit is visible on main. |
+| Own PR, next step | PR as a proposal; merge as acceptance | Match from/to diagram to compare/base selectors. Ask whether opening a PR changes main. |
+| Partner contribution | Fork as a separate repository | Show two owners and URLs. After a fork commit, verify the original is unchanged; after merging, verify it changed. |
 
-### Account Creation & Setup (15 minutes)
-**Guided Setup:**
-1. Visit github.com
-2. Create free account (assist with username selection)
-3. Verify email address
-4. Brief tour of GitHub interface
-   - Navigation bar
-   - Profile
-   - Repositories tab
-   - Explore page
+Use only the relevant diagram or official UI landmark during a brief concept introduction; do not advance through extra slides during the work period. Detailed scripts and accessibility adaptations are in the [facilitator guide](FACILITATOR-GUIDE.md).
 
----
+## Safety and sharing
 
-## Part 2: GitHub Basics - Hands-On (40 minutes)
+Before any upload, ask: **would it be harmful if this became public?** If yes, stop and check organizational rules and get guidance, even for private or internal repositories. Access restrictions are not a guarantee against mistakes, account compromise, or copies. Deleting a file may not remove its history or copies already distributed.
 
-### Understanding Repositories (10 minutes)
-**Concepts:**
-- What is a repository? (A project folder with superpowers)
-- Public vs. Private vs. Internal repositories
-- README files: Your project's front door
+Use fictional content only. If sensitive data is uploaded accidentally, stop and report it through the organization's incident process; deleting the file alone is not a fix.
 
-**Activity:**
-- Create your first repository
-- Add a README file
-- Preview formatted text (Markdown basics)
+The standard fork exercise uses public, disposable practice repositories with participants' agreement. Slack is a link-exchange surface, not a privacy boundary for those repositories. Confirm the channel, membership, and a non-posting/private-repository alternative before facilitating. Do not contact participants or post on their behalf without authorization.
 
-### Making Your First Changes (15 minutes)
-**Key Terms:**
-- Commit: Saving a snapshot of changes
-- Commit message: Describing what you changed
+## Completion evidence
 
-**Guided Exercise:**
-1. Edit the README file directly in browser
-2. Write a meaningful commit message
-3. View commit history
-4. Understand the timeline view
+Participants can show or describe their file, commit diff, merged own-repository PR, outgoing fork PR, and merged incoming contribution. Opening a PR is not the final step: the recipient reads it, leaves a useful comment, merges it, and both verify the original file.
 
-**Non-Tech Scenario:**
-- "Managing a team handbook"
-- Each commit = a saved version with notes
+With an access alternative or unresolved setup problem, state which steps were observed or assisted rather than claiming independent completion. Participants choose one further edit or PR, a date within seven days, and verify it through a diff they can explain.
 
-### Branches: Working Safely (15 minutes)
-**Concepts:**
-- What is a branch? (A parallel universe for your project)
-- Main/master branch: The "official" version
-- Feature branches: Safe experimentation space
-- Why branches matter (work without breaking production)
+## Scope and pacing
 
-**Activity:**
-1. Create a new branch
-2. Make changes on the branch
-3. Switch between branches
-4. See how changes are isolated
+Five minutes is the target for setup and repository creation, not a promise about account verification. Encourage pre-work and use the catch-up buffer. Keep fork edits to one menu item or sentence. Defer conflicts, fork syncing, merge strategies, local Git, and automation.
 
----
-
-## Break (10 minutes)
-*Stretch, grab water, troubleshoot any issues*
-
----
-
-## Part 3: Collaboration Fundamentals (30 minutes)
-
-### Pull Requests: Proposing Changes (15 minutes)
-**Concepts:**
-- What is a Pull Request (PR)?
-- The review process
-- Why PRs are valuable (quality control, knowledge sharing)
-- Merge conflicts explained simply
-
-**Guided Exercise:**
-1. Create a pull request from your branch
-2. Write a description
-3. View the "diff" (what changed)
-4. Add a comment
-5. Merge the pull request
-6. Delete the branch (cleanup)
-
-**Real-World Parallel:**
-- Like submitting a document for review before publishing
-
-### Working with Others (15 minutes)
-**Concepts:**
-- Forking: Making your own copy
-- Cloning: Downloading to your computer
-- Issues: Project to-do list and discussions
-- @mentions and notifications
-
-**Activity:**
-- Partner exercise: Fork the workshop repository
-- Create an issue in your partner's repository
-- Practice @mentioning
-- Explore the issues tab
-
----
-
-## Part 4: Practical Applications & Next Steps (15 minutes)
-
-### GitHub Beyond Code (5 minutes)
-**Use Cases for Non-Tech:**
-- Documentation teams
-- Marketing content collaboration
-- Policy/procedure manuals
-- Meeting notes and agendas
-- Project planning with Issues/Projects
-
-### GitHub Desktop & VS Code (3 minutes)
-**Brief Introduction:**
-- GitHub Desktop: GUI alternative to web interface
-- VS Code: Popular editor with GitHub integration
-- When to use each tool
-
-### Next Steps & Resources (7 minutes)
-**Continue Learning:**
-- GitHub Learning Lab (free interactive tutorials)
-- GitHub Docs (docs.github.com)
-- GitHub Skills (skills.github.com)
-- Community Forum
-
-**Suggested Next Skills:**
-- Markdown formatting
-- GitHub Projects (kanban boards)
-- GitHub Pages (free websites)
-- Git command line basics (for tech folks)
-- Collaborating on larger teams
-
-**Practice Suggestions:**
-- Create a personal portfolio repository
-- Contribute to open source
-- Use GitHub for your next team project
-- Track personal goals/notes in a private repo
-
----
-
-## Wrap-Up (10 minutes)
-
-### Q&A Session (7 minutes)
-- Open floor for questions
-- Address common concerns
-- Share troubleshooting tips
-
-### Feedback & Closing (3 minutes)
-- Collect feedback forms
-- Share additional resources
-- Provide contact info for follow-up questions
-- Encourage practice: "Use it or lose it!"
-
----
-
-## Facilitator Notes
-
-### Common Pitfalls to Address
-- Confusion between Git and GitHub
-- Forgetting to commit changes
-- Unclear commit messages
-- Fear of "breaking" things
-- Overwhelming terminology
-
-### Tips for Mixed Technical Levels
-- Use non-technical analogies consistently
-- Pair tech with non-tech participants
-- Encourage questions at any time
-- Show both web UI and mention alternatives
-- Focus on concepts over commands
-
-### Backup Activities
-If moving faster than expected:
-- Explore GitHub Profiles customization
-- Introduction to GitHub Projects
-- Show real-world repository examples
-- Practice more complex branching scenarios
-
-If moving slower than expected:
-- Skip GitHub Desktop/VS Code intro
-- Reduce partner activities
-- Focus on commits and basic workflow only
-
-### Success Metrics
-By the end, participants should be able to:
-- [ ] Explain what GitHub is and why it's useful
-- [ ] Create a repository
-- [ ] Make and commit changes
-- [ ] Create and merge a pull request
-- [ ] Understand basic collaboration concepts
-- [ ] Know where to find help and resources
-
----
-
-## Post-Workshop Follow-Up
-
-### Recommended
-- Send summary email with links
-- Create a Slack/Discord channel for questions
-- Share recording if available
-- Schedule optional "office hours"
-- Plan intermediate/advanced follow-up sessions
-
-### Additional Workshop Ideas
-- **Workshop 2:** GitHub Desktop & Local Development
-- **Workshop 3:** Collaboration at Scale
-- **Workshop 4:** GitHub Actions & Automation
-- **Workshop 5:** GitHub Pages & Project Management
-
+Issues and [Exercise 06](exercises/06-practical-applications/) are optional follow-up material. If behind, reduce explanation and defer optional questions; do not silently drop review/merge verification or the closing reflection. Record unfinished hands-on steps honestly.

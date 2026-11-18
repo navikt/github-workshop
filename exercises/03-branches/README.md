@@ -1,279 +1,51 @@
-# Exercise 03 - Branches: Working Safely
+# Exercise 03 - A Branch Is a Separate Draft
 
-**Time: 15 minutes**  
-**Objective:** Learn to create and work with branches for safe experimentation
+**Time:** 8 minutes including demo, followed immediately by Exercise 04 (12 minutes)
 
----
+**Task:** Add a sample menu on a draft branch of your fictional `cafe-handbook`, without changing `main`.
 
-## What You'll Learn
-- What branches are and why they're essential
-- How to create a new branch
-- How to switch between branches
-- How branches keep your work organized
-- When to use branches
+## See it first
 
----
+You want to propose a handbook update without changing the current version yet. A **branch** gives that draft a name.
 
-## Understanding Branches
+```text
+main:      current handbook ---------------- still unchanged
+                         \
+add-menu:                 draft + menu commit
+```
 
-### What is a Branch?
+The facilitator creates a draft, makes one change, and switches between the branches. Before switching, predict: **will the menu appear on main?**
 
-Think of a **branch** as a parallel universe for your project:
-- You can experiment freely without affecting the main version
-- Multiple people can work on different features simultaneously
-- If something goes wrong, your main version is safe
+A branch separates work; it does not enforce review or prevent direct edits to `main`. Follow your team's rules outside this practice repository.
 
-### Real-World Analogy
+## Steps
 
-Imagine you're writing a book:
-- **Main branch** = The published manuscript
-- **Feature branch** = A draft where you try a new chapter
-- You can work on the draft without changing the published version
-- When you're happy with the new chapter, you merge it into the manuscript
-
-### Why Branches Matter
-
-✅ **Safety:** Experiment without breaking things  
-✅ **Organization:** Each feature/task gets its own branch  
-✅ **Collaboration:** Multiple people work simultaneously  
-✅ **Review:** Changes can be reviewed before merging  
-
----
-
-## Part 1: Your First Branch (5 minutes)
-
-Let's create a branch and make some changes!
-
-### Steps:
-
-1. **Go to your repository** (the one you created in Exercise 02)
-
-2. **Find the branch selector** 
-   - Look for a button that says "main" with a dropdown arrow
-   - It's usually near the top-left of the file list
-
-3. **Click on the branch dropdown**
-
-4. **Type a name for your new branch:**
-   - Good names describe what you're working on:
-     - `add-contact-info`
-     - `update-about-section`
-     - `fix-typo`
-   - Use lowercase and hyphens
-
-5. **Click "Create branch: [your-branch-name]"**
-
-🎉 **You've created your first branch!**
-
-**Notice:** The dropdown now shows your new branch name instead of "main"
-
----
-
-## Part 2: Make Changes on Your Branch (5 minutes)
-
-Now let's make some changes on your new branch. The main branch will stay exactly the same!
-
-### Steps:
-
-1. **Confirm you're on your new branch** (check the branch dropdown)
-
-2. **Edit your README.md file** (click the pencil icon ✏️)
-
-3. **Add a new section.** For example:
+1. Open your own `cafe-handbook` and select `main`.
+2. Open the branch dropdown, type `add-menu`, and choose **Create branch**.
+3. Check that the dropdown now says `add-menu`.
+4. Edit `README.md` and add:
 
 ```markdown
-## Contact Information
-- Email: your.email@example.com
-- GitHub: @yourusername
-- Location: Your City, Country
-
-## Fun Facts
-- 🎸 I play guitar
-- 🌏 I've visited 15 countries
-- ☕ I drink 3 coffees per day
+## Sample Menu
+- Filter coffee
+- Herbal tea
+- Lemon cake
 ```
 
-4. **Scroll down and commit your changes**
-   - Commit message: "Add contact information and fun facts"
-   - Make sure "Commit directly to the [branch-name] branch" is selected
+5. Commit with `Add sample cafe menu`, directly to **add-menu**, not `main`.
+6. Switch to `main` and inspect the README. The new section should be absent.
+7. Switch back to `add-menu` and confirm the section is there.
 
-5. **Click "Commit changes"**
+## Done when
 
-✅ **Important:** These changes only exist on your branch!
+- [ ] I can identify my current branch.
+- [ ] I can show that the menu is on `add-menu` but not on `main`.
+- [ ] I can explain a branch as a separate draft.
 
----
+Do not merge yet. Next, [Exercise 04](../04-pull-requests/) introduces a pull request as the proposal to bring this draft into `main`.
 
-## Part 3: The Magic of Branches (3 minutes)
+## If something differs
 
-Now let's see how branches keep things separate.
+If the menu already appears on `main`, check the commit history and ask for help; you may have committed on the wrong branch. Do not delete work or start making unrelated branches to catch up.
 
-### Switch Between Branches:
-
-1. **Click the branch dropdown** again
-
-2. **Select "main"** from the list
-
-3. **Look at your README.md file**
-
-**🎩 Magic moment:** Your changes disappeared! They're safe on your branch, but the main branch is unchanged.
-
-4. **Switch back to your feature branch**
-
-5. **Look at README.md again**
-
-**The changes are back!** This is the power of branches.
-
----
-
-## Part 4: Understanding Branch Workflow (2 minutes)
-
-### The Standard Workflow:
-
-```
-main branch (stable, production-ready)
-    ↓
-Create feature branch
-    ↓
-Make changes on feature branch
-    ↓
-Test and review changes
-    ↓
-Merge back to main
-    ↓
-Delete feature branch (cleanup)
-```
-
-### Branch Naming Conventions:
-
-**Good branch names:**
-- `feature/user-login` - new feature
-- `fix/broken-link` - bug fix
-- `docs/update-readme` - documentation
-- `add-team-page` - descriptive
-
-**Bad branch names:**
-- `test` - too vague
-- `my-branch` - not descriptive
-- `branch1` - meaningless
-- `stuff` - what stuff?
-
----
-
-## Practice Exercises
-
-### Exercise 1: Multiple Branches
-1. Go back to the main branch
-2. Create another new branch: `add-favorite-books`
-3. Add a section about your favorite books
-4. Commit the changes
-5. Switch between main, your first branch, and this branch
-6. Notice how each has different content!
-
-### Exercise 2: Organized Changes
-Create branches for different types of updates:
-1. `fix/spelling-errors` - fix any typos
-2. `feature/add-goals` - add a goals section
-3. `update/improve-formatting` - improve markdown formatting
-
-### Exercise 3: Before & After
-1. Create a branch called `experiment`
-2. Make dramatic changes to your README (change everything!)
-3. Switch back to main
-4. See how your main branch is completely safe
-
----
-
-## Visualizing Branches
-
-```
-main:        A --- B --- C --- D
-                   \           \
-feature:            E --- F --- G (merge later)
-```
-
-- **A, B, C, D** = Commits on main branch
-- **E, F, G** = Commits on feature branch
-- Feature branch splits from B
-- Can merge back to main later
-
----
-
-## Key Concepts
-
-### When to Create a Branch:
-✅ Starting work on a new feature  
-✅ Fixing a bug  
-✅ Experimenting with changes  
-✅ Working on something that needs review  
-
-### When NOT to Create a Branch:
-❌ Tiny typo fixes (can commit directly to main)  
-❌ Emergency hotfixes (though some teams use branches for these too)  
-
-### Branch Hygiene:
-✅ One branch per feature/task  
-✅ Use descriptive names  
-✅ Keep branches short-lived  
-✅ Delete branches after merging  
-✅ Merge or delete old branches  
-
----
-
-## Common Questions
-
-**Q: How many branches can I have?**  
-A: As many as you want! But keep them organized and delete old ones.
-
-**Q: What if I forget which branch I'm on?**  
-A: Check the branch dropdown. It always shows your current branch.
-
-**Q: Can I move changes from one branch to another?**  
-A: Yes, but that's an advanced topic. For now, make sure you're on the right branch before making changes!
-
-**Q: What if I make changes on the wrong branch?**  
-A: Don't panic! You can usually fix this. Ask your facilitator for help.
-
-**Q: Do I always need to use branches?**  
-A: For solo projects, not always. But it's a good habit! For team projects, branches are essential.
-
----
-
-## Tips for Success
-
-💡 **Always check which branch you're on before making changes**  
-💡 **Use the branch dropdown frequently**  
-💡 **Name branches clearly so you remember what they're for**  
-💡 **Don't be afraid to experiment - that's what branches are for!**  
-💡 **Think of main as your "published" version**  
-
----
-
-## What's Next?
-
-You've learned to create branches and work safely. But how do you get changes from your branch back into main?
-
-That's where **Pull Requests** come in! Head to **Exercise 04 - Pull Requests** to learn the professional way to merge your work.
-
----
-
-## Quick Reference
-
-```markdown
-# Branch Commands (Web Interface)
-
-Create branch:
-1. Click branch dropdown
-2. Type new name
-3. Click "Create branch"
-
-Switch branch:
-1. Click branch dropdown
-2. Select branch name
-
-Check current branch:
-- Look at branch dropdown
-```
-
----
-
-**Need help?** Check the [Cheat Sheet](../../CHEAT-SHEET.md) or ask your facilitator!
+Use the [cheat sheet](../../CHEAT-SHEET.md) for a reminder.

@@ -1,6 +1,13 @@
 # Exercise 06 - Practical Applications: GitHub Beyond Code
 
-**Time: 10 minutes**  
+**Optional take-home material:** This is not part of the two-hour core workshop. Use fictional examples in your `cafe-handbook`; do not upload real workplace or personal information.
+
+**Task:** Choose one idea below and apply it to your fictional cafe project.
+
+**Done when:** You can show the result and explain how it helps the project.
+
+**Time: 10 minutes to explore; allow additional time for setup and practice**
+
 **Objective:** Discover how to use GitHub for documentation, project management, and non-code projects
 
 ---
@@ -522,7 +529,7 @@ A: Absolutely! The web interface is user-friendly and doesn't require command-li
 
 ## What's Next?
 
-You've completed the main workshop exercises! You now know:
+The core workshop was complete after Exercise 05. These materials offer further practice with:
 - ✅ How to create repositories
 - ✅ How to commit changes
 - ✅ How to use branches
@@ -540,6 +547,6 @@ You've completed the main workshop exercises! You now know:
 
 ---
 
-**Congratulations on completing the GitHub for Dummies workshop! 🎉**
+**Keep practicing one useful change at a time.**
 
 **Need help?** Check the [Cheat Sheet](../../CHEAT-SHEET.md) or ask your facilitator!

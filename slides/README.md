@@ -1,149 +1,104 @@
-# GitHub Pages Deployment
+# Workshop Slides
 
-This repository is configured to host the workshop slides on GitHub Pages.
+The slides follow the [two-hour workshop outline](../WORKSHOP-OUTLINE.md), including a 10-minute break. Files and commits come first; branches, an own-repository PR, and fork-based contributions form the second half. Only further-learning topics are in the appendix.
 
-## 📍 Slides URL
+## Publishing
 
-Once published, your slides will be available at:
+The existing [Pages workflow](../.github/workflows/pages.yml) publishes the contents of `slides/` as the site root.
+
+**Expected URL after deployment:** https://navikt.github.io/github-workshop/
+
+In repository **Settings → Pages**, choose **GitHub Actions** as the source. The workflow runs on changes under `slides/` pushed to `main`, or through its manual trigger. Publishing and repository settings changes are separate from editing these materials; confirm authorization before performing them.
+
+Core activity slides contain their own instructions and practice text; participants do not need to open a numbered exercise. Because only `slides/` is uploaded, optional reference links point to GitHub rather than files outside the deployment artifact.
+
+## Local presentation
+
+Open `index.html` in a browser, or serve this directory:
+
+```bash
+cd slides
+python3 -m http.server 8000
 ```
-https://yourusername.github.io/github-workshop/slides/
-```
 
-Replace `yourusername` with your actual GitHub username.
+Then open http://localhost:8000/.
 
-## 🚀 Setup Instructions
+**Internet is still required:** Reveal.js and its plugins load from jsDelivr; Aksel CSS and fonts load from Nav CDN. Local HTML alone is not an offline backup. Rehearse on the presentation device and prepare an offline PDF and exercise copies beforehand.
 
-### Option 1: Enable GitHub Pages (Easiest)
+## Aksel styling
 
-1. Go to your repository on GitHub
-2. Click **Settings** tab
-3. Click **Pages** in the left sidebar
-4. Under **Source**, select:
-   - Branch: `main`
-   - Folder: `/ (root)`
-5. Click **Save**
-6. Wait 1-2 minutes for deployment
-7. Visit: `https://yourusername.github.io/github-workshop/slides/`
-
-### Option 2: Using GitHub Actions (Advanced)
-
-A GitHub Actions workflow can automatically deploy changes. This is already configured if you have `.github/workflows/pages.yml`.
-
-## 🎨 Customizing the Slides
-
-### Change Theme
-
-Edit `slides/index.html` and replace the theme CSS:
+The presentation loads the version-pinned Aksel stylesheet directly from Nav CDN:
 
 ```html
-<!-- Current theme (night) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/night.css">
+<link rel="stylesheet" href="https://cdn.nav.no/aksel/@navikt/ds-css/8.23.0/index.min.css">
 ```
 
-Available themes:
-- `black.css` - Black background
-- `white.css` - White background
-- `league.css` - Gray background with blue accents
-- `beige.css` - Beige colors
-- `sky.css` - Blue colors
-- `night.css` - Dark theme (current)
-- `serif.css` - Serif fonts
-- `simple.css` - Minimal
-- `solarized.css` - Solarized colors
-- `moon.css` - Dark blue
-- `blood.css` - Dark red
+It includes design tokens, the Source Sans 3 font, and Aksel's baseline. No React dependency, build step, or copied token definitions are needed. Reveal.js supplies slide layout and navigation; the former Night theme and its Google Fonts imports are removed.
 
-### Add Your Branding
+The document uses Aksel's `dark` class on `<html>`. Custom styles use semantic `--ax-*` tokens for backgrounds, text, borders, diff colors, spacing, and radii, including the SVG diagram. Typography uses Aksel's font family, weight, size, and line-height tokens with presentation-scale multipliers to remain readable on a projector. Diagram coordinates and proportional layout remain presentation-specific.
 
-Update the final slide with your repository URL:
+Links are underlined, keyboard focus is visible, and reduced-motion preferences disable slide/background transitions and CSS animations. Added and removed diff lines keep their `+`/`-` symbols rather than relying on color alone.
 
-```html
-<p class="small">Workshop materials:<br>
-<a href="https://github.com/yourusername/github-workshop">github.com/yourusername/github-workshop</a></p>
-```
+To change color mode, replace the root `dark` class with `light`; do not swap in hardcoded colors. When upgrading Aksel, update the exact CDN version and verify the referenced tokens together. Nav CDN does not resolve semver ranges.
 
-## ⌨️ Keyboard Controls
+See Aksel's [CSS-import and CDN documentation](https://aksel.nav.no/grunnleggende/kode/css-import).
 
-During presentation:
+## Controls
 
-- **Space** or **→** - Next slide
-- **←** - Previous slide
-- **Esc** or **O** - Overview mode (see all slides)
-- **F** - Fullscreen
-- **S** - Speaker notes (if available)
-- **B** or **.** - Pause (black screen)
-- **?** - Help menu
+| Key | Action |
+|---|---|
+| Space | Advance through slides, including vertical appendix slides |
+| Arrow keys | Navigate horizontally or vertically |
+| Esc | Overview |
+| F | Fullscreen |
+| S | Speaker notes |
+| B or . | Blank screen |
+| ? | Help |
 
-## 📝 Adding Speaker Notes
+Speaker notes include timeboxes, safety reminders, prediction questions, and explicit browser demo cues.
 
-Add speaker notes to any slide:
+## Visual demos
 
-```html
-<section>
-    <h2>Slide Title</h2>
-    <p>Slide content</p>
-    
-    <aside class="notes">
-        These are speaker notes.
-        Press 'S' during presentation to view them.
-    </aside>
-</section>
-```
+Concepts appear just before use. Diagrams introduce Git vs. GitHub, persistent copies after an upload, branch isolation, PR direction, and cross-repository ownership. Each diagram has a text caption and should be described aloud.
 
-## 🎯 Tips for Presenting
+Use **explain the task → optional demo or independent start → leave the task slide up → help and verify**. Each activity slide shows the actions, any exact text to enter, a completion check, and the work period after the demo. Numbered exercises remain optional detailed references, not required navigation.
 
-1. **Test beforehand**: Open slides in the browser you'll use for presenting
-2. **Use overview mode**: Press `Esc` to see all slides
-3. **Practice navigation**: Get comfortable with keyboard controls
-4. **Fullscreen**: Press `F` for distraction-free presenting
-5. **Print backup**: File → Print → Save as PDF for offline backup
+Explain the task before switching to the browser. Say the goal and completion check; point to the steps and sample text. Participants may start immediately or watch the short demo. Notes specify what to open, show, ask, and verify. If there is only one projected display, share the slide URL first so independent participants can keep the instructions open; use a second display or side-by-side view when available.
 
-## 🔧 Local Development
+After the demo, return to the same activity slide, announce the work period and finish time, and leave it visible. Use that time for individual help and questions rather than continuing the presentation. Keep all steps and sample text visible, with no fragments. If no one needs the demo, use its time for practice, not an earlier move to the next stage.
 
-To test slides locally:
+Titles show the **total stage time**, including its briefing, optional demo, and work/help period. The footer shows how long to work after the demo. Speaker notes and the [facilitator timing table](../FACILITATOR-GUIDE.md#demo-and-work-periods) give the split. Advancement stays manual; no automatic countdown or slide change is required.
 
-1. **Simple option**: Open `slides/index.html` directly in your browser
-2. **Local server** (recommended for testing):
-   ```bash
-   cd slides
-   python -m http.server 8000
-   # Or: python3 -m http.server 8000
-   ```
-   Then visit: `http://localhost:8000`
+Rehearse these checkpoints:
 
-## 📱 Mobile/Touch Controls
+- Editor → commit dialog → saved file and message.
+- Typo correction → new diff → earlier version still available.
+- Draft → main → draft, showing the edit only on the draft.
+- PR source/destination selectors → original main unchanged before merge, updated afterward.
+- Original and fork with different owners → fork commit leaves original unchanged → incoming review and merge update original.
 
-- Swipe left/right to navigate
-- Pinch to zoom
-- Two-finger tap for overview
+Official GitHub Docs illustrations are bundled under [`assets/github-docs/`](assets/github-docs/) for history, branch creation, PR review, merging, and fork comparison controls. Use the relevant UI landmarks briefly before the task, not instead of leaving its instructions visible. The more detailed merge-commit diagram is an optional appendix reference; it does not interrupt the core practice flow.
 
-## 🌐 Sharing the Slides
+The images are unchanged, locally hosted documentation examples, not captures of the workshop or participants. Captions and notes identify different example branch names and counts. Keep them intact rather than recoloring them to match Aksel; presentation framing remains token-based.
 
-Share the GitHub Pages URL with:
-- Workshop participants (for reference during/after workshop)
-- Other facilitators
-- Anyone interested in the content
+Prepare sanitized screenshots of the cafe demo states as an additional backup. Use fictional content, zoom into relevant controls, and keep text instructions available. The [facilitator guide](../FACILITATOR-GUIDE.md) contains the detailed scripts.
 
-The slides work on any modern browser, no installation required!
+### Image attribution
 
-## ❓ Troubleshooting
+The bundled illustrations are **GitHub Docs, by GitHub and contributors, CC BY 4.0**. [Asset credits](assets/github-docs/README.md) record the exact upstream revision, source links, license, and reuse details. This is separate from the workshop's MIT license. Keep the slide credits and linked attribution when redistributing or exporting slides.
 
-**Slides not showing up?**
-- Wait 1-2 minutes after enabling GitHub Pages
-- Check Settings → Pages for deployment status
-- Ensure `slides/index.html` exists in your repository
-- Try hard refresh: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
+The Slack activity requires a confirmed channel and audience, assigned recipients, and an alternative for anyone who cannot or does not want to post a public practice repository. The slides do not create or publish anything in Slack.
 
-**Slides look broken?**
-- Check browser console for errors (F12)
-- Ensure you have internet connection (CDN resources)
-- Try a different browser
+## Humor and images
 
-**Can't navigate slides?**
-- Make sure JavaScript is enabled
-- Try keyboard navigation instead of mouse
-- Check for browser extensions that might interfere
+The opening meme has its own slide, a visible text question, and descriptive alt text. It is not an overlay and contains no essential task instructions. Read the question aloud; skip the image if it does not load.
 
----
+The image is externally hosted and may be unavailable. Do not rely on it for the lesson. Only add a local replacement if you have permission to redistribute it; include attribution where required. Keep jokes understandable without prior Git knowledge and avoid covering instructions or making beginners the target.
 
-**Enjoy your presentation! 🎉**
+The filename joke remains in the history speaker notes; the participant-facing slide shows the official history control.
+
+## Customization
+
+Edit `index.html` to change the title, example, or links. Keep the core outcome and timings aligned with the outline and exercises. Task slides should remain readable while participants work; do not hide their steps behind fragments or memes.
+
+For a different repository, update the GitHub links and deployment URL together.

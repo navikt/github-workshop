@@ -1,291 +1,151 @@
-# GitHub Quick Reference Cheat Sheet
+# GitHub Quick Reference
 
-**Workshop: GitHub for Dummies**
+**Workshop:** GitHub from Scratch
 
----
+Use the browser for the core workshop. No Git commands or installations required.
 
-## Key Concepts
+## Core concepts
 
-| Term | Definition | Analogy |
-|------|------------|---------|
-| **Repository (Repo)** | Project folder that tracks all changes | A project folder with superpowers |
-| **Commit** | Snapshot of changes with a description | Saving with a note about what you did |
-| **Branch** | Parallel version of your project | Parallel universe for safe experiments |
-| **Main Branch** | Default/primary branch | The "official" version |
-| **Pull Request (PR)** | Proposed changes for review | Submitting work for approval |
-| **Merge** | Combining branches together | Accepting changes into main version |
-| **Fork** | Your personal copy of someone's repo | Making your own copy of a cookbook |
-| **Clone** | Downloading repo to your computer | Downloading files to work offline |
-| **Issue** | Task, bug report, or discussion | Project to-do item or question |
+| Term | Meaning |
+|---|---|
+| Git | The version-control tool; usable without GitHub or an internet connection |
+| GitHub | Online hosting and collaboration around Git repositories; today's browser interface creates Git commits |
+| Repository (repo) | Project files and their committed history |
+| README.md | The project's introduction, written in Markdown |
+| Commit | A saved snapshot with a message describing the change |
+| History | The sequence of commits you can inspect |
+| Diff | A comparison showing added (`+`) and removed (`-`) lines |
 
----
+## Before uploading
 
-## Common GitHub Actions
+**Would it be harmful if this became public?** If yes, stop and check your organization's rules and get guidance before using GitHub, including private or internal repositories. Access restrictions are not a guarantee against mistakes, account compromise, or copies.
 
-### Creating a Repository
-1. Click **+** in top-right corner → **New repository**
-2. Choose a name (no spaces, use hyphens)
-3. Select Public or Private
-4. ✅ Check "Add a README file"
-5. Click **Create repository**
+Use fictional content only in this workshop. No personal information, workplace documents, passwords, or access keys. A restricted Slack channel does not make linked public content private.
 
-### Making Changes (Committing)
-1. Navigate to the file you want to edit
-2. Click the **pencil icon** (Edit)
-3. Make your changes
-4. Scroll down to "Commit changes"
-5. Write a clear commit message
-6. Click **Commit changes**
+Deleting a file does not necessarily remove history or downloaded copies. Complete removal after information spreads may be impossible. If sensitive data is uploaded accidentally, stop and report it through the organization's incident process; deleting alone is not a fix.
 
-### Creating a Branch
-1. Click branch dropdown (says "main")
-2. Type new branch name
-3. Click "Create branch: [name]"
-4. You're now on the new branch!
+## Create a repository
 
-### Switching Branches
-1. Click branch dropdown
-2. Select the branch name
-3. Files update to that branch's version
+1. Choose **+ → New repository** or **New** on your repositories page.
+2. Name it `cafe-handbook`.
+3. Choose **Public** for the standard fictional fork exercise if comfortable, or agree the alternative with the facilitator.
+4. Select **Add a README file**.
+5. Choose **Create repository**.
 
-### Creating a Pull Request
-1. Make changes on a branch (not main)
-2. Click **Pull requests** tab
-3. Click **New pull request**
-4. Select your branch to merge into main
-5. Click **Create pull request**
-6. Add title and description
-7. Click **Create pull request**
+Public content and its history can be read by anyone. A private repository needs invitations for others to access it; a URL alone is not enough. Use fictional content in either case.
 
-### Merging a Pull Request
-1. Open the pull request
-2. Review the changes (Files changed tab)
-3. Click **Merge pull request**
-4. Click **Confirm merge**
-5. Optional: Delete the branch (cleanup)
+## Edit and commit
 
-### Creating an Issue
-1. Click **Issues** tab
-2. Click **New issue**
-3. Add title and description
-4. Optional: Add labels, assignees
-5. Click **Submit new issue**
+1. Open the file and choose the pencil icon or **Edit file**.
+2. Make your edit and use **Preview** if helpful.
+3. Choose **Commit changes** to open the dialog.
+4. Write a descriptive message, such as `Add cafe opening hours`.
+5. In your own practice repository, choose to commit directly to `main`.
+6. Confirm **Commit changes** and check the saved file.
 
----
+Typing alone does not create a commit. Follow your team's branch and review rules outside this practice repository.
 
-## Markdown Basics
+## Find a change
 
-Use Markdown to format text in README files, issues, and comments:
+1. Return to the repository's **Code** page.
+2. Open commit history and choose your commit message.
+3. Read the diff: `+` is added text and `-` is removed text.
 
-```markdown
-# Heading 1
-## Heading 2
-### Heading 3
+Additions are usually green and removals red, but the symbols also identify them.
 
-**bold text**
-*italic text*
+## Correct a text mistake
 
-- Bullet point
-- Another point
-  - Nested point
+1. Inspect history to understand the mistake.
+2. Return to **Code** and check you're viewing `main`, not an old commit.
+3. Edit the current file.
+4. Make a new commit, such as `Fix spelling in cafe welcome`.
+5. Inspect the new diff. The earlier commit remains in history.
 
-1. Numbered list
-2. Second item
+This is for ordinary text corrections, not removing exposed credentials. Never use real secrets as practice content.
 
-[Link text](https://url.com)
+## Markdown basics
 
-![Image alt text](image-url.jpg)
+````markdown
+# Main heading
+## Section heading
 
-`code text`
+**Bold text** and *italic text*
 
+- List item
+- Another item
+
+1. First step
+2. Second step
+
+- [ ] Task to do
+- [x] Completed task
+
+[Link text](https://docs.github.com/)
+
+```text
+A block of plain text
 ```
-code block
-```
-```
+````
 
----
+## Quick troubleshooting
 
-## Good Commit Message Examples
+| Problem | Check |
+|---|---|
+| My edit isn't visible | Did you confirm the commit? Are you in the right repository and branch? |
+| I'm looking at an old version | Return to Code and select `main` before editing. |
+| My partner can't open my private repository | Invite them and wait for acceptance, or optionally show just the exercise file on screen. |
+| A button has moved | Ask for help or consult [GitHub Docs](https://docs.github.com/). |
+| Email isn't verified | Check spam and GitHub's resend option. Keep verification messages private. |
 
-✅ **Good Messages:**
-- "Add contact information to README"
-- "Fix typo in introduction section"
-- "Update team member list"
-- "Remove outdated pricing information"
+## Branches and collaboration
 
-❌ **Bad Messages:**
-- "changes"
-- "update"
-- "fixed stuff"
-- "asdfasdf"
+Learn these after working with files and commits; they are the second half of the workshop.
 
-**Tip:** Describe WHAT you changed and WHY (if not obvious)
+| Term | Meaning |
+|---|---|
+| Branch | A separate line of work, such as a draft handbook update |
+| Pull request (PR) | A proposal to merge changes, with space for review and discussion |
+| Merge | Combine changes into another branch |
+| Issue | A task, question, or improvement to discuss |
+| Fork | Your copy of someone else's repository, connected to the original |
 
----
+**Branch workflow:** Create branch → edit and commit → open PR → review → merge → delete branch.
 
-## Keyboard Shortcuts
+Check which branch you're on before editing. A branch alone does not enforce review or protect `main`; follow the repository's rules.
 
-| Action | Shortcut |
-|--------|----------|
-| Search repository | `/` or `Ctrl/Cmd + K` |
-| Create new issue | `C` (on Issues page) |
-| Submit comment | `Ctrl/Cmd + Enter` |
-| Go to Code tab | `G` then `C` |
-| Go to Issues tab | `G` then `I` |
-| Go to Pull Requests | `G` then `P` |
+### PR in your own repository
 
----
+1. From `main`, create `add-menu` with the branch dropdown.
+2. Edit the README and commit to `add-menu`.
+3. Switch to `main`: verify the draft edit is absent.
+4. Choose **Pull requests → New pull request**: **base main**, **compare add-menu**.
+5. Inspect the diff, add a title and explanation, and create the PR.
+6. Opening a PR only proposes a change. Inspect **Files changed**, then merge and confirm.
+7. Check `main` for the update; delete the draft branch if offered.
 
-## Collaboration Workflow
+### Fork PR to a partner
 
-**Standard Flow:**
-1. Create a branch for your work
-2. Make changes and commit them
-3. Open a pull request
-4. Team reviews your changes
-5. Make updates if requested
-6. Pull request gets merged
-7. Delete the branch
+1. Post the agreed fictional practice repository URL in the confirmed Slack channel; use your assigned target, not a random repository.
+2. Open the target and choose **Fork**. Use an available name such as `cafe-handbook-contribution` because you already own `cafe-handbook`.
+3. In your fork, create `add-menu-item`, add one fictional menu item, and commit.
+4. Verify the original repository is still unchanged.
+5. Use **Contribute → Open pull request**, or compare across forks.
+6. Check destination (**base repository: partner's original**, **base: main**) and source (**head repository: your fork**, **compare: add-menu-item**).
+7. Inspect the diff, create the PR, and send its link to the recipient through the agreed route.
+8. Back in your original repository, read and comment on the incoming PR, submit any pending review, and merge if appropriate.
+9. Both people verify the contributed item on the destination's `main`.
 
-**Quick Tip:** Keep branches focused on one task/feature
+A fork is a separate repository, not a branch. It does not automatically stay synchronized with later changes to the original. For non-public/non-posting alternatives, see [Exercise 05: Access and sharing](exercises/05-collaboration/#access-and-sharing).
 
----
+Follow [Branches](exercises/03-branches/), [Pull requests](exercises/04-pull-requests/), and [Collaboration](exercises/05-collaboration/) in order. Issues are optional follow-up practice.
 
-## Common Scenarios
+## After the workshop
 
-### "I want to propose a change to someone's project"
-1. Fork their repository
-2. Make changes in your fork
-3. Create a pull request back to original repo
+Choose one more handbook edit or PR and a date within seven days. Success is a diff you can explain and, for a PR, a verified merge.
 
-### "I want to track bugs and tasks"
-- Use Issues tab
-- Add labels (bug, enhancement, question)
-- Assign to team members
-- Reference issues in commits with `#issue-number`
-
-### "I want to undo my last commit"
-1. Go to commit history
-2. Find previous commit
-3. Click browse files at that commit
-4. Make new commit with corrected version
-
-### "I want to work with my team"
-1. Create repository (or get added as collaborator)
-2. Each person works on their own branch
-3. Use pull requests to propose changes
-4. Review each other's work
-5. Merge when approved
-
----
-
-## Important Things to Remember
-
-### ✅ DO:
-- Write clear commit messages
-- Create branches for new work
-- Use pull requests for review
-- Ask questions in Issues
-- Read the README first
-- Check existing issues before creating new ones
-
-### ❌ DON'T:
-- Commit directly to main (use branches!)
-- Write vague commit messages
-- Work on someone's repo without permission
-- Delete things without understanding impact
-- Panic - you can usually undo changes!
-
----
-
-## Helpful URLs
-
-| Resource | URL |
-|----------|-----|
-| GitHub Skills | https://skills.github.com |
-| GitHub Docs | https://docs.github.com |
-| Markdown Guide | https://www.markdownguide.org |
-| GitHub Status | https://www.githubstatus.com |
-| Support | https://support.github.com |
-
----
-
-## File Structure Best Practices
-
-**Every repository should have:**
-- `README.md` - Project description and instructions
-- `LICENSE` - How others can use your code (optional)
-- `.gitignore` - Files to ignore (for technical projects)
-
-**Good folder structure:**
-```
-my-project/
-├── README.md
-├── docs/           (documentation)
-├── src/            (source files)
-├── tests/          (test files)
-└── examples/       (example files)
-```
-
----
-
-## Troubleshooting
-
-| Problem | Solution |
-|---------|----------|
-| Can't find my branch | Check branch dropdown - you might be on a different branch |
-| Changes disappeared | Check which branch you're on |
-| Email not verified | Check spam folder, resend verification |
-| Merge conflict | Contact a team member or facilitator for help |
-| Locked out of account | Use GitHub account recovery |
-| Can't push changes | Check if you have write access to the repository |
-
----
-
-## Next Steps After Workshop
-
-**Practice Ideas:**
-1. Create a personal portfolio repository
-2. Document a hobby or project
-3. Collaborate with a friend on a shared project
-4. Contribute to an open source project
-5. Use GitHub for meeting notes or documentation
-
-**Continue Learning:**
-- Complete GitHub Skills courses
-- Watch GitHub Universe talks
-- Join GitHub Community discussions
-- Explore trending repositories
-- Set up GitHub Pages (free website)
-
----
-
-## Quick Command Reference (Web Interface)
-
-**Everything you learned today can be done through the web interface - no command line required!**
-
-However, if you're curious about Git commands for the future:
-
-| Web Action | Git Command Equivalent |
-|------------|----------------------|
-| Commit changes | `git commit -m "message"` |
-| Create branch | `git branch branch-name` |
-| Switch branch | `git checkout branch-name` |
-| Merge PR | `git merge branch-name` |
-| Clone repo | `git clone repo-url` |
-
----
-
-## Support & Questions
-
-**Need Help?**
-- Check [GitHub Docs](https://docs.github.com)
-- Ask in [GitHub Community](https://github.community)
-- Contact workshop facilitator: [contact info]
-- Open an issue in workshop repository
-
----
-
-**Remember: The best way to learn GitHub is to use it. Start a project today! 🚀**
-
-*Keep this cheat sheet handy as you practice!*
+- [Files and commits checklist](exercises/02-first-commit/)
+- [Collaboration completion checklist](exercises/05-collaboration/#done-when)
+- [GitHub Docs](https://docs.github.com/)
+- [GitHub Skills](https://skills.github.com/)
+- [Further learning](resources/)
+- [Workshop issues](https://github.com/navikt/github-workshop/issues) for problems in these materials
