@@ -22,7 +22,7 @@ GitHub's interface changes over time. If a button has moved, ask for help rather
 - [ ] Your email is verified.
 - [ ] You can find the repository creation screen.
 
-Already finished? Find **Your repositories** and wait for the next demo. You do not need to memorize a glossary, install Git, or use a desktop app.
+Already finished? Find **Your repositories** and wait for the next task. You do not need to memorize a glossary, install Git, or use a desktop app.
 
 **Demo checkpoint:** The facilitator shows the signup entry point and repository navigation, without exposing passwords or verification messages. You then locate those controls on your own screen.
 

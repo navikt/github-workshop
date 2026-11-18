@@ -47,11 +47,6 @@ Replace the README with a short cafe handbook and make a commit.
 
 Welcom to our fictional community cafe!
 
-## What We Serve
-- Coffee
-- Tea
-- Cake
-
 ## Volunteer Checklist
 - [ ] Set out the cups
 - [ ] Check the menu board

@@ -10,7 +10,7 @@ The existing [Pages workflow](../.github/workflows/pages.yml) publishes the cont
 
 In repository **Settings → Pages**, choose **GitHub Actions** as the source. The workflow runs on changes under `slides/` pushed to `main`, or through its manual trigger. Publishing and repository settings changes are separate from editing these materials; confirm authorization before performing them.
 
-Because only `slides/` is uploaded, the slides link to exercises on GitHub rather than using relative paths to files outside the deployment artifact.
+Core activity slides contain their own instructions and practice text; participants do not need to open a numbered exercise. Because only `slides/` is uploaded, optional reference links point to GitHub rather than files outside the deployment artifact.
 
 ## Local presentation
 
@@ -61,7 +61,13 @@ Speaker notes include timeboxes, safety reminders, prediction questions, and exp
 
 Concepts appear just before use. Diagrams introduce Git vs. GitHub, persistent copies after an upload, branch isolation, PR direction, and cross-repository ownership. Each diagram has a text caption and should be described aloud.
 
-Visible **Live demo** cues identify when to switch to the browser. Notes specify what to open, what to show/change, what to ask, and the visible result to verify. Return to the task slide while participants work.
+Use **explain the task → optional demo or independent start → leave the task slide up → help and verify**. Each activity slide shows the actions, any exact text to enter, a completion check, and the work period after the demo. Numbered exercises remain optional detailed references, not required navigation.
+
+Explain the task before switching to the browser. Say the goal and completion check; point to the steps and sample text. Participants may start immediately or watch the short demo. Notes specify what to open, show, ask, and verify. If there is only one projected display, share the slide URL first so independent participants can keep the instructions open; use a second display or side-by-side view when available.
+
+After the demo, return to the same activity slide, announce the work period and finish time, and leave it visible. Use that time for individual help and questions rather than continuing the presentation. Keep all steps and sample text visible, with no fragments. If no one needs the demo, use its time for practice, not an earlier move to the next stage.
+
+Titles show the **total stage time**, including its briefing, optional demo, and work/help period. The footer shows how long to work after the demo. Speaker notes and the [facilitator timing table](../FACILITATOR-GUIDE.md#demo-and-work-periods) give the split. Advancement stays manual; no automatic countdown or slide change is required.
 
 Rehearse these checkpoints:
 
@@ -71,7 +77,15 @@ Rehearse these checkpoints:
 - PR source/destination selectors → original main unchanged before merge, updated afterward.
 - Original and fork with different owners → fork commit leaves original unchanged → incoming review and merge update original.
 
-Prepare sanitized screenshots of those states for backup; they are not included as purported live GitHub captures. Use fictional content, zoom into relevant controls, and keep text instructions available. The [facilitator guide](../FACILITATOR-GUIDE.md) contains the detailed scripts.
+Official GitHub Docs illustrations are bundled under [`assets/github-docs/`](assets/github-docs/) for history, branch creation, PR review, merging, and fork comparison controls. Use the relevant UI landmarks briefly before the task, not instead of leaving its instructions visible. The more detailed merge-commit diagram is an optional appendix reference; it does not interrupt the core practice flow.
+
+The images are unchanged, locally hosted documentation examples, not captures of the workshop or participants. Captions and notes identify different example branch names and counts. Keep them intact rather than recoloring them to match Aksel; presentation framing remains token-based.
+
+Prepare sanitized screenshots of the cafe demo states as an additional backup. Use fictional content, zoom into relevant controls, and keep text instructions available. The [facilitator guide](../FACILITATOR-GUIDE.md) contains the detailed scripts.
+
+### Image attribution
+
+The bundled illustrations are **GitHub Docs, by GitHub and contributors, CC BY 4.0**. [Asset credits](assets/github-docs/README.md) record the exact upstream revision, source links, license, and reuse details. This is separate from the workshop's MIT license. Keep the slide credits and linked attribution when redistributing or exporting slides.
 
 The Slack activity requires a confirmed channel and audience, assigned recipients, and an alternative for anyone who cannot or does not want to post a public practice repository. The slides do not create or publish anything in Slack.
 
@@ -81,7 +95,7 @@ The opening meme has its own slide, a visible text question, and descriptive alt
 
 The image is externally hosted and may be unavailable. Do not rely on it for the lesson. Only add a local replacement if you have permission to redistribute it; include attribution where required. Keep jokes understandable without prior Git knowledge and avoid covering instructions or making beginners the target.
 
-The text-only filename joke introduces history without an external image dependency.
+The filename joke remains in the history speaker notes; the participant-facing slide shows the official history control.
 
 ## Customization
 

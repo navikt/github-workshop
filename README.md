@@ -76,4 +76,4 @@ For self-paced learning, complete Exercises 01-04 in order, then arrange a partn
 
 Suggest an improvement in an [issue](https://github.com/navikt/github-workshop/issues) or propose a change through a pull request.
 
-These materials are available under the [MIT License](LICENSE).
+Original workshop materials are available under the [MIT License](LICENSE). The bundled [GitHub Docs illustrations](slides/assets/github-docs/README.md) retain their separate CC BY 4.0 license and attribution.

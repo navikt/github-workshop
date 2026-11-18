@@ -20,13 +20,38 @@
 - Test fork creation with a different name: participants already own `cafe-handbook`, so their partner's fork needs an available name such as `cafe-handbook-contribution`.
 - Prepare two labeled browser tabs/windows: **original owner/repository** and **contributor/fork**. Zoom in enough that the owner, branch, and changed lines are readable.
 - Use a separate demo profile; hide notifications, personal tabs, email, and account settings. Never project credentials, recovery codes, or verification messages.
-- Prepare sanitized screenshots of the editor, diff, branch selector, PR source/destination selectors, and merged file as backup. Use only fictional content. Do not claim a screenshot walkthrough is hands-on completion.
+- Use the bundled [official GitHub Docs illustrations](slides/assets/github-docs/) as UI landmarks within the existing teaching blocks. Their repository names, branch names, counts, and visibility labels are examples, not exercise values.
+- Prepare sanitized screenshots of the cafe editor, diff, and merged file as an additional backup. Use only fictional content. Do not claim a screenshot walkthrough is hands-on completion.
 - Test projection, network, links, slide navigation, and speaker notes. The opening meme is optional; the diagrams and demo notes carry the learning points.
 - Keep accessible text instructions available. Explain diagrams aloud and identify diff lines by `+` and `-`, not color alone. Local HTML still uses a CDN; prepare an offline PDF and exercise copies if needed.
 
-Use **problem → concept → predict → demonstrate → do → verify**. Introduce terminology at the point of use. Keep the current task slide visible after switching back from the browser; do not talk through a long demonstration while people struggle to copy each click.
+Use **introduce one concept → explain the task → optional demo or independent start → work with instructions visible → verify**. Introduce terminology at the point of use. Each activity slide contains the steps, practice text, completion check, and timebox; the numbered exercises are optional detailed references.
+
+Explain the goal and completion check, then point to the written steps and practice text **before opening the browser**. Say: "You can start now using these instructions, or watch the short demo first." Participants do not have to wait or follow each click. Share the slide URL so they can keep the task open while the projector shows the browser; use a second display or side-by-side view if available.
+
+After the optional demo, **return to the same task slide**, announce the work period and finish time, and leave it visible. Stop presenting; circulate or answer questions. Do not introduce the next concept, hide steps behind fragments, or replace the task with a countdown-only screen. Keep a private help route. If a demo is skipped, give its time to practice rather than advancing early.
 
 Each demo cue has four parts: **open**, **change/show**, **ask**, **visible proof**. The checkpoints below describe what to show, not just what to say.
+
+### Demo and work periods
+
+These are splits of the existing stage budgets, not additional time. The briefing includes the just-in-time concept and task explanation; show only the visual needed for that explanation. The final column is how long the task slide stays up after the demo for work, questions, and help.
+
+| Activity | Total | Brief | Optional demo | Task slide / work and help |
+|---|---|---|---|---|
+| Account setup | 5 min | 1 min | 1 min | 3 min |
+| Create repository | 5 min | 1 min | 1 min | 3 min |
+| Edit and commit | 10 min | 1 min | 2 min | 7 min |
+| History and correction | 10 min | 1 min | 2 min | 7 min |
+| Independent edit / catch-up | 10 min | 1 min | None | 9 min |
+| Branch draft | 8 min | 1 min | 2 min | 5 min |
+| Own-repository PR | 12 min | 1 min | 3 min | 8 min |
+| Share links and pair | 5 min | 1 min | 1 min | 3 min |
+| Fork and edit | 8 min | 1 min | 2 min | 5 min |
+| Send fork PR | 5 min | 1 min | 1 min | 3 min |
+| Incoming review and merge | 7 min | 1 min | 1 min | 5 min |
+
+The three fork activities still total 20 minutes. Protect the incoming review stage even if some outgoing PRs need help. The welcome, break, and closing remain 15, 10, and 10 minutes respectively.
 
 ## Session notes
 
@@ -56,7 +81,7 @@ Use the two-box visual and timeline. Preview "we'll propose and accept each othe
 
 **Purpose:** Reach a signed-in account and repository navigation.
 
-**Format and script:** Give a very short demo, then let everyone attempt [Exercise 01](exercises/01-setup/). Show the signup entry point and describe the private verification steps without projecting an actual verification message.
+**Format and script:** Explain the account task, let participants start, and offer the short demo to anyone who wants it. Show the signup entry point and describe private verification steps without projecting a verification message. Return to the task slide for three minutes of work/help. [Exercise 01](exercises/01-setup/) is an optional reference.
 
 **Visual demo:** Open GitHub, show **Sign up**, then switch to an already signed-in demo account and locate **Your repositories → New**. Ask participants to find the same destination.
 
@@ -70,7 +95,7 @@ Use the two-box visual and timeline. Preview "we'll propose and accept each othe
 
 **Purpose:** Understand repository, README, and visibility through a real example.
 
-**Format and script:** "A repository holds this project's files and history. The README introduces it." Demo briefly, then use Exercise 02, Part 1.
+**Format and script:** "A repository holds this project's files and history. The README introduces it." Explain the complete task before the optional demo. Let independent participants start, then leave the slide up for three minutes of work/help. Exercise 02, Part 1 is an optional reference.
 
 **Visual demo:** Open **New repository**, create `cafe-handbook` with a README, and point to owner/name in the URL and the visibility label. Ask "Who can read this?" Public fictional repositories support the later fork exercise; no one must publish their own repository to participate.
 
@@ -84,7 +109,7 @@ Use the two-box visual and timeline. Preview "we'll propose and accept each othe
 
 **Purpose:** Connect an edit, its commit message, and the saved result.
 
-**Format and script:** Demonstrate once, then participants edit the README in Exercise 02, Part 2. "Typing is not a commit. A commit records a snapshot with a note."
+**Format and script:** "Typing is not a commit. A commit records a snapshot with a note." Point to the exact README text and commit message on the slide before the optional demo. Participants can start immediately. Return to that slide for seven minutes of work/help; Exercise 02, Part 2 is an optional reference.
 
 **Visual demo:** Show editor → Preview → commit dialog → saved README and message. Keep the deliberate `Welcom` typo. Ask "Have we recorded a commit just by typing?" Briefly point out **Add file → Create new file** using a fictional `menu.md`; participants can try it during the buffer.
 
@@ -98,7 +123,7 @@ Use the two-box visual and timeline. Preview "we'll propose and accept each othe
 
 **Purpose:** Introduce history and diff using a change participants already recognize.
 
-**Format and script:** Use Exercise 02, Part 3. "History is our sequence of recorded versions; a diff shows what changed."
+**Format and script:** "History is our sequence of recorded versions; a diff shows what changed." Explain the visible correction task, including returning to current main, before the optional demo. Leave it projected for seven minutes afterward. Exercise 02, Part 3 is an optional reference.
 
 **Visual demo:** Open the handbook commit and point to `Welcom`. Return to current **Code → main**, fix it, commit, and show the removed and added lines side by side or in the unified diff. Ask "Did correcting it erase the earlier commit?" Reopen the earlier version to show that it remains. Connect this directly to the sensitive-data rule; never demonstrate with a real secret.
 
@@ -112,7 +137,7 @@ Use the two-box visual and timeline. Preview "we'll propose and accept each othe
 
 **Purpose:** Check the edit/commit/diff workflow and absorb account or navigation delays.
 
-**Format and script:** Exercise 02, Part 4: add fictional opening hours, commit, and find the diff. "Try individually first; help is available."
+**Format and script:** Explain the opening-hours task and text on the slide for one minute, then leave it visible for nine minutes without a demo. "Try individually first; help is available." Exercise 02, Part 4 is an optional reference.
 
 **Visual checkpoint:** Participants identify the new section, their commit message, and added lines. Early finishers can add `menu.md` or predict the diff from changing one opening time.
 
@@ -138,7 +163,7 @@ Use the two-box visual and timeline. Preview "we'll propose and accept each othe
 
 **Purpose:** Understand a separate draft before introducing the proposal to merge it.
 
-**Format and script:** Exercise 03 takes about 8 minutes; Exercise 04 takes 12. Do not present both as one uninterrupted explanation.
+**Format and script:** Explain the branch task before its optional demo, then leave its instructions and menu text visible for five minutes. Check branch isolation before introducing the PR task. Explain that task before its optional demo, then leave it visible for eight minutes. The stages total 8 and 12 minutes respectively; do not present them as one uninterrupted explanation. Exercises 03 and 04 are optional detailed references.
 
 **Visual demo, branch:** Create `add-menu`, add the small menu section, and commit. Ask "Will this be on main?" Switch draft → main → draft to verify. Only then introduce the PR.
 
@@ -154,7 +179,7 @@ Use the two-box visual and timeline. Preview "we'll propose and accept each othe
 
 **Purpose:** Give everyone one outgoing target and one incoming contributor.
 
-**Format and script:** Use Exercise 05, Part 1. Confirm the channel and audience aloud. "Post only your fictional practice repository URL. A restricted Slack channel does not make a public repository private." Use pairs, or a contribution ring for an odd number; do not use free choice.
+**Format and script:** Confirm the channel and audience aloud. "Post only your fictional practice repository URL. A restricted Slack channel does not make a public repository private." Explain the task before the optional example, then leave the slide up for three minutes while assigning pairs or a contribution ring; do not use free choice. Exercise 05, Part 1 is an optional reference.
 
 **Visual demo:** Show the agreed message format and a pairing diagram, not real participant data in reusable screenshots.
 
@@ -168,9 +193,9 @@ Use the two-box visual and timeline. Preview "we'll propose and accept each othe
 
 **Purpose:** Repeat the PR workflow across repositories, then experience the maintainer role.
 
-**Format and script:** Use Exercise 05, Part 2. "A fork is your separate repository copy. A commit there does not change the original. A PR asks the original owner to accept the change." Budget roughly 5 minutes for the short demo, 8 to fork/edit/open, and 7 for incoming review and merge.
+**Format and script:** "A fork is your separate repository copy. A commit there does not change the original. A PR asks the original owner to accept the change." Use three self-contained activity slides: **fork/edit, 8 minutes; send PR, 5 minutes; incoming review/merge, 7 minutes**. Each starts with a brief explanation and optional demo while others can start; leave its instructions up for the work/help period in the timing table. Exercise 05, Part 2 is an optional detailed reference.
 
-**Visual demo:** Show original and fork URLs side by side. Use an available fork name because participants already own `cafe-handbook`. Create `add-menu-item` in the fork and add one fictional item. Check that the original is unchanged. Point to all four PR selectors: destination repository and branch, source repository and branch. Open the PR to the original, then have the other owner read the diff, leave a useful comment, and merge. Reopen original `main` as visible proof.
+**Visual demos:** For fork/edit, show original and fork URLs side by side. Use an available fork name because participants already own `cafe-handbook`. Create `add-menu-item`, add `- Hot chocolate` under Sample Menu, and commit. Check that the original is unchanged, then leave the fork/edit slide visible for five minutes. Next explain sending the PR, point to all four source/destination selectors, and show opening it; leave that task slide visible for three minutes. Finally explain incoming review, show reading the diff, commenting, merging, and reopening original `main`; leave the review/merge slide visible for five minutes. Use prepared states or a consenting co-facilitator for these short demos rather than replaying earlier steps.
 
 **Materials:** Two-repository diagram, labeled tabs/windows, base/head selector screenshot backup, Exercise 05.
 
@@ -198,7 +223,7 @@ Use the confirmed Slack channel for link exchange and PR threads, not sensitive 
 
 | Area | Structure and instructions |
 |---|---|
-| Current task | Outcome / timebox / exercise link / done when |
+| Current task | Exact steps and practice text / total time / optional demo / work-and-help period / done when; optional reference link separately |
 | Repository exchange | One fictional practice repository URL per participant who agrees to post; incoming PR link in its thread |
 | Assignments | Contributor → target owner/repository; everyone has one outgoing and one incoming contribution |
 | Help | Agreed signal plus a private alternative; no speed ranking |

@@ -36,6 +36,6 @@ temp/
 # Puppeteer / Browser testing
 screenshot*.png
 *.png
+!/slides/assets/github-docs/*.png
 .cache/
 .local-chromium/
-

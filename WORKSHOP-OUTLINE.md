@@ -13,7 +13,7 @@
 | Elapsed time | Session | Type | Facilitator notes |
 |---|---|---|---|
 | 00:00-00:15 | Welcome, Git vs. GitHub, and safe practice | Information / discussion | Two-minute origin story; show the outcome without teaching PR mechanics yet. Establish the data rule. |
-| 00:15-00:20 | Account setup | Information / practice | Exercise 01. Quick demo, then individual attempt; use the later buffer for delays. |
+| 00:15-00:20 | Account setup | Information / practice | Explain the task; optional quick demo while others start. Leave instructions visible for practice and help. |
 | 00:20-00:25 | Create a repository | Information / practice | Exercise 02, Part 1. Explain repository, README, and visibility at this point. |
 | 00:25-00:35 | Edit/add a file and commit | Information / practice | Exercise 02, Part 2. Show the editor, saved file, and commit message. |
 | 00:35-00:45 | History and recovery | Information / practice | Exercise 02, Part 3. Introduce history and diff using the edit participants just made. |
@@ -21,12 +21,16 @@
 | 00:55-01:05 | Break | Break | Protect the break. |
 | 01:05-01:25 | Branch and PR in own repository | Information / practice | Exercise 03 (8 min), then 04 (12 min). Check branch isolation before introducing PRs. |
 | 01:25-01:30 | Share links and assign partners | Discussion / coordination | Exercise 05, Part 1. Use the confirmed Slack channel; remind everyone of public visibility and assign recipients. |
-| 01:30-01:50 | Fork, contribute, review, and merge | Information / practice | Exercise 05, Part 2. One tiny change each; everyone contributes and receives. |
+| 01:30-01:50 | Fork, contribute, review, and merge | Information / practice | Fork/edit (8 min), send PR (5 min), review/merge (7 min), each including briefing, optional demo, and work/help. |
 | 01:50-02:00 | Check results, parked questions, reflection | Discussion / decision | Verify the incoming merge, address questions, and choose a dated next practice task. |
 
 ## Teaching rhythm
 
-**Show the problem → introduce one concept → predict → demonstrate → do → verify.**
+**Introduce one concept → explain the task → optional demo or independent start → work with instructions visible → verify.**
+
+Activity slides are self-contained: steps, exact practice text, completion check, and timebox. Numbered exercises are optional detailed references. Explain the goal and completion check before the browser demo so participants can start independently. They do not have to watch or wait for the demo.
+
+Each stage's advertised time includes its briefing, optional demo, and work/help period. Return to the same task slide after the demo, announce the finish time, and leave it projected while the facilitator helps or answers questions. Share the slide URL for independent access during browser demos. If a demo is skipped, give its time to practice. See the [timing table](FACILITATOR-GUIDE.md#demo-and-work-periods).
 
 | Stage | Introduce now | Visual reinforcement and checkpoint |
 |---|---|---|
@@ -39,7 +43,7 @@
 | Own PR, next step | PR as a proposal; merge as acceptance | Match from/to diagram to compare/base selectors. Ask whether opening a PR changes main. |
 | Partner contribution | Fork as a separate repository | Show two owners and URLs. After a fork commit, verify the original is unchanged; after merging, verify it changed. |
 
-Keep the current task visible when returning from the browser demo. Detailed scripts and accessibility adaptations are in the [facilitator guide](FACILITATOR-GUIDE.md).
+Use only the relevant diagram or official UI landmark during a brief concept introduction; do not advance through extra slides during the work period. Detailed scripts and accessibility adaptations are in the [facilitator guide](FACILITATOR-GUIDE.md).
 
 ## Safety and sharing
 

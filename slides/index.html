@@ -107,8 +107,43 @@
             margin: 0 auto;
             border-radius: var(--ax-radius-8);
         }
+        .reveal .official-illustration {
+            display: block;
+            min-width: 0;
+            max-width: 100%;
+            max-height: calc(var(--ax-space-32) * 12);
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: var(--ax-radius-8);
+        }
         .reveal .task {
             text-align: left;
+        }
+        .reveal .task-content {
+            font-size: calc(var(--ax-font-size-large) * 1.5);
+            line-height: calc(var(--ax-font-line-height-large) * 1.5);
+        }
+        .reveal .task-content > * {
+            min-width: 0;
+        }
+        .reveal pre.practice-copy {
+            width: auto;
+            margin: 0;
+            padding: var(--ax-space-16);
+            background: var(--ax-bg-neutral-soft);
+            border-radius: var(--ax-radius-8);
+            box-shadow: none;
+            font-size: inherit;
+            line-height: inherit;
+            white-space: pre-wrap;
+        }
+        .reveal .practice-copy code {
+            padding: 0;
+            max-height: none;
+            overflow: visible;
+            white-space: inherit;
+            overflow-wrap: break-word;
         }
         .reveal .flow {
             display: flex;
@@ -280,6 +315,23 @@
             </section>
 
             <section>
+                <h2>Choose how to learn</h2>
+                <ol>
+                    <li>Listen to the task and its completion check</li>
+                    <li>Start on your own, or watch the short live demo</li>
+                    <li>Use the task slide while you work; ask for help</li>
+                </ol>
+                <p class="small">The demo is optional. The time shown includes it.<br>We'll leave the instructions up before moving on.</p>
+                <p class="small">Task slides: <a href="https://navikt.github.io/github-workshop/">navikt.github.io/github-workshop/</a></p>
+                <aside class="notes">
+                    Explain this routine briefly within the welcome block.
+                    Read the task before opening the browser so independent participants can start immediately.
+                    If possible, keep a second display or shared slide link available during the demo.
+                    Return to the task slide afterward, announce the work period and finish time, and help participants.
+                </aside>
+            </section>
+
+            <section>
                 <h2>Think first, then share</h2>
                 <p>What file would you like to update more confidently?</p>
                 <p class="small">Take a quiet minute. Sharing is optional. Ask for help at any point.</p>
@@ -336,16 +388,20 @@
                 <h2>Account setup - 5 min</h2>
                 <ol>
                     <li>Sign in at <a href="https://github.com/">github.com</a>, or choose Sign up</li>
-                    <li>Complete verification, including email verification</li>
-                    <li>Find Your repositories and New repository</li>
+                    <li>Follow the prompts and verify your email</li>
+                    <li>Open your profile menu → Your repositories</li>
+                    <li>Find New, or use + → New repository; stop there</li>
                 </ol>
                 <p class="small"><strong>Done when:</strong> You can sign in and find repository creation.</p>
-                <p class="demo">Live demo: signup entry point → signed-in demo account → repository navigation</p>
+                <p class="demo">Demo optional · Start now or watch first.<br>Then: 3 min to work, ask questions, and get help.</p>
                 <aside class="notes">
+                    BRIEF: 1 minute to explain the task and remind everyone to keep credentials private.
+                    DEMO, optional: 1 minute. Independent participants may start immediately.
                     OPEN github.com and show the signup entry point. Do not project real credentials or verification messages.
                     SHOW navigation using an already signed-in demo account.
                     ASK participants to locate New repository.
-                    PROOF: each can reach that screen. Use Exercise 01; route verification delays to the catch-up buffer.
+                    HOLD this slide for 3 minutes afterward; announce the finish time and help with navigation.
+                    PROOF: each can reach that screen. Route verification delays to the catch-up buffer.
                 </aside>
             </section>
 
@@ -364,18 +420,22 @@
 
             <section class="task">
                 <h2>Create a repository - 5 min</h2>
-                <ol>
-                    <li>Choose New repository and name it <code>cafe-handbook</code></li>
-                    <li>Public supports the fork exercise, if you're comfortable</li>
-                    <li>Otherwise, agree the participation alternative</li>
+                <ol class="task-content">
+                    <li>Choose + → New repository; set Owner to your account</li>
+                    <li>Name it <code>cafe-handbook</code></li>
+                    <li>Choose Public for fictional practice, if comfortable.<br>Prefer Private? Ask for the contribution alternative; don't change it later just to join in.</li>
                     <li>Select Add a README file and create the repository</li>
+                    <li>Open README.md; check the owner/name URL and visibility label</li>
                 </ol>
                 <p class="small"><strong>Done when:</strong> You can find the README and explain who can read it.</p>
-                <p class="demo">Live demo: creation form → README → owner/name URL and visibility label</p>
+                <p class="demo">Demo optional · Start now or watch first.<br>Then: 3 min to work, ask questions, and get help.</p>
                 <aside class="notes">
+                    BRIEF: 1 minute, including repository/README/visibility and the participation alternative.
+                    DEMO, optional: 1 minute. Read the task before switching to the browser.
                     OPEN New repository, SHOW creation with a README and fictional description.
                     ASK who can read it. PROOF: locate owner/name in the URL and the visibility label.
-                    Use Exercise 02, Part 1. Do not pressure anyone to publish their own repository.
+                    HOLD this slide for 3 minutes afterward; announce the finish time and help participants.
+                    Do not pressure anyone to publish their own repository.
                     Prepared public demo targets support the contribution alternative.
                 </aside>
             </section>
@@ -396,34 +456,50 @@
             </section>
 
             <section class="task">
-                <h2>Edit/add and commit - 10 min</h2>
-                <ol>
-                    <li>Edit README.md with the cafe text from Exercise 02</li>
-                    <li>Keep the deliberate <code>Welcom</code> typo for later</li>
-                    <li>Preview, choose Commit changes, and write a useful message</li>
-                    <li>Commit to main and check your saved file</li>
-                </ol>
-                <p class="small"><strong>Done when:</strong> The handbook and your commit message are visible.</p>
-                <p class="demo">Live demo: editor → Preview → commit dialog → saved file; then Add file</p>
+                <h2>Edit and commit - 10 min</h2>
+                <div class="two-column task-content">
+                    <ol>
+                        <li>main → README.md → pencil / Edit file</li>
+                        <li>Replace the text with this example. Keep the <code>Welcom</code> typo.</li>
+                        <li>Preview → Commit changes.<br>Message: <strong>Add cafe welcome and volunteer checklist</strong></li>
+                        <li>Commit directly to main; confirm. Check the saved file.</li>
+                    </ol>
+                    <pre class="practice-copy"><code># Community Cafe Handbook
+
+Welcom to our fictional community cafe!
+
+## Volunteer Checklist
+- [ ] Set out the cups
+- [ ] Check the menu board
+- [ ] Welcome visitors</code></pre>
+                </div>
+                <p class="small"><strong>Done when:</strong> The handbook and your commit message are saved on main.</p>
+                <p class="demo">Demo optional · Start now or watch first.<br>Then: 7 min to work, ask questions, and get help.</p>
                 <aside class="notes">
+                    BRIEF: 1 minute to explain the commit concept, task, and deliberate typo.
+                    DEMO, optional: 2 minutes. Participants can use this slide without another document.
                     OPEN the README editor. SHOW the edit, preview, dialog, and saved result.
                     ASK whether typing alone records a commit. PROOF: locate the saved text and message.
-                    Briefly SHOW Add file → Create new file with fictional menu.md; participants may try it in the buffer.
+                    Briefly point out Add file → Create new file; participants may try it in the buffer.
+                    HOLD this slide for 7 minutes afterward; announce the finish time and help participants.
                     Direct commits to main are only a simplification for participants' own disposable practice repositories.
                 </aside>
             </section>
 
             <section>
-                <h2>History beats filename archaeology</h2>
-                <p><code>handbook_final_FINAL_really-final.md</code></p>
+                <h2>Find earlier versions</h2>
                 <figure>
-                    <div class="flow">
-                        <div class="step"><strong>First commit</strong><span>Welcome text<br>with a typo</span></div>
-                        <span aria-hidden="true">→</span>
-                        <div class="step"><strong>Later commit</strong><span>Corrected<br>welcome text</span></div>
-                    </div>
-                    <figcaption>History is the sequence of recorded versions. Earlier content remains available.</figcaption>
+                    <img class="official-illustration" src="assets/github-docs/commits-page.png"
+                         width="1376" height="442"
+                         alt="GitHub repository page with the 178 commits link outlined beside the latest commit message.">
+                    <figcaption>Open the commits link to inspect history.<br><a href="https://github.com/github/docs/blob/841308525efb1a0f005369d83c54183068bb65d2/assets/images/help/commits/commits-page.png">GitHub Docs (GitHub and contributors)</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></figcaption>
                 </figure>
+                <aside class="notes">
+                    This official documentation screenshot is a UI landmark, within the existing history block.
+                    Point to the commits link, not the example's count or private label.
+                    History beats handbook_final_FINAL_really-final.md: earlier versions are recorded as commits.
+                    Continue in the live cafe repository and show the actual versions.
+                </aside>
             </section>
 
             <section>
@@ -437,33 +513,47 @@
             </section>
 
             <section class="task">
-                <h2>History and recovery - 10 min</h2>
-                <ol>
-                    <li>Find your handbook commit in history and inspect its diff</li>
-                    <li>Return to current Code → main</li>
-                    <li>Change <code>Welcom</code> to <code>Welcome</code> and commit</li>
-                    <li>Inspect the correction, then reopen the earlier version</li>
+                <h2>Correct a typo - 10 min</h2>
+                <ol class="task-content">
+                    <li>Code → main → commits. Open <strong>Add cafe welcome and volunteer checklist</strong>; find <code>Welcom</code> in the diff.</li>
+                    <li>Return to Code → main → README.md → Edit file, not the old snapshot</li>
+                    <li>Change <code>Welcom</code> to <code>Welcome</code>; Preview → Commit changes</li>
+                    <li>Message: <strong>Fix spelling in cafe welcome</strong>.<br>Commit directly to main and confirm.</li>
+                    <li>Open the new commit in history; read its +/− lines.<br>Reopen the earlier commit: the typo is still there.</li>
                 </ol>
                 <p class="small"><strong>Done when:</strong> You can explain the correction and find the old version.</p>
-                <p class="demo">Live demo: earlier commit → correction → new diff → earlier version still available</p>
+                <p class="demo">Demo optional · Start now or watch first.<br>Then: 7 min to work, ask questions, and get help.</p>
                 <aside class="notes">
+                    BRIEF: 1 minute using the history landmark and diff example, then read the task.
+                    DEMO, optional: 2 minutes.
                     OPEN history and SHOW the typo commit. Return to current main, correct, and commit.
                     ASK: did the correction erase the earlier version?
                     PROOF: open the earlier version again. Connect it to the sensitive-data rule.
-                    Never demonstrate this with a real secret. Use Exercise 02, Part 3.
+                    Never demonstrate this with a real secret.
+                    HOLD this slide for 7 minutes afterward; announce the finish time and help participants.
                 </aside>
             </section>
 
             <section class="task">
-                <h2>Independent edit / catch-up - 10 min</h2>
-                <ul>
-                    <li>Add fictional Opening Hours</li>
-                    <li>Commit with a descriptive message</li>
-                    <li>Find the diff and explain the added/removed lines</li>
-                </ul>
-                <p class="small">Start individually; help and text instructions are available.<br>Ready early? Add a fictional menu.md file or change one opening time.</p>
+                <h2>Try it yourself - 10 min</h2>
+                <div class="two-column task-content">
+                    <ol>
+                        <li>On main, edit README.md and append the fictional hours shown</li>
+                        <li>Preview → Commit changes.<br>Message: <strong>Add fictional opening hours</strong>. Commit to main.</li>
+                        <li>Open that commit in history and explain its added/removed lines</li>
+                    </ol>
+                    <div>
+                        <pre class="practice-copy"><code>## Opening Hours
+- Monday-Friday: 09:00-17:00
+- Saturday: 10:00-14:00</code></pre>
+                        <p>Ready early? Add file → Create new file: menu.md. Add <code>- Hot chocolate</code>, then commit to main.</p>
+                    </div>
+                </div>
+                <p class="small"><strong>Done when:</strong> You can show the section, its commit, and its diff.</p>
+                <p class="demo">No demo this time · Try it yourself; help is available.<br>9 min to practice or finish an earlier task. No speed test.</p>
                 <aside class="notes">
-                    No live demo first. Use Exercise 02, Part 4. Helpers support delayed account setup.
+                    BRIEF: 1 minute. No live demo first; this is the independent checkpoint.
+                    HOLD this slide for 9 minutes. Helpers support delayed account setup.
                     PROOF: each participant points to a new edit, commit, and diff.
                     No public speed comparisons. Offer one more independent attempt after assistance.
                 </aside>
@@ -498,18 +588,48 @@
             </section>
 
             <section class="task">
-                <h2>Make a draft - 8 min</h2>
-                <ol>
-                    <li>From your own repository's main, create <code>add-menu</code></li>
-                    <li>Add the sample menu from Exercise 03</li>
-                    <li>Commit to add-menu, not main</li>
-                    <li>Switch to main, then back to add-menu</li>
-                </ol>
-                <p class="small"><strong>Done when:</strong> The menu appears on the draft but not main. Don't merge yet.</p>
-                <p class="demo">Live demo: draft edit → commit → main unchanged → draft edit still there</p>
+                <h2>Find the branch control</h2>
+                <figure>
+                    <div class="two-column">
+                        <img class="official-illustration" src="assets/github-docs/create-branch-text.png"
+                             width="618" height="516"
+                             alt="GitHub branch dropdown with new-branch typed and Create branch: new-branch from main highlighted.">
+                        <div>
+                            <p>Type the name of your draft.</p>
+                            <p class="small">The example says new-branch.<br>Our exercise uses <strong>add-menu</strong>, created from main.</p>
+                        </div>
+                    </div>
+                    <figcaption><a href="https://github.com/github/docs/blob/841308525efb1a0f005369d83c54183068bb65d2/assets/images/help/branches/create-branch-text.png">GitHub Docs (GitHub and contributors)</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></figcaption>
+                </figure>
                 <aside class="notes">
+                    Use this within the existing eight-minute branch block, not as an additional timebox.
+                    Match the separate-draft concept to the control participants will use.
+                    The exact menu may change; demonstrate the current UI and keep add-menu as the exercise name.
+                </aside>
+            </section>
+
+            <section class="task">
+                <h2>Make a draft - 8 min</h2>
+                <div class="two-column task-content">
+                    <ol>
+                        <li>Your repository: main → branch dropdown</li>
+                        <li>Type <code>add-menu</code> → Create branch. Check the branch name.</li>
+                        <li>Append this menu to README.md. Commit to add-menu with <strong>Add sample cafe menu</strong>.</li>
+                        <li>Switch main → add-menu. Compare the README.</li>
+                    </ol>
+                    <pre class="practice-copy"><code>## Sample Menu
+- Filter coffee
+- Herbal tea
+- Lemon cake</code></pre>
+                </div>
+                <p class="small"><strong>Done when:</strong> The menu appears on the draft but not main. Don't merge yet.</p>
+                <p class="demo">Demo optional · Start now or watch first.<br>Then: 5 min to work, ask questions, and get help.</p>
+                <aside class="notes">
+                    BRIEF: 1 minute using the branch concept and control illustration, then read the task.
+                    DEMO, optional: 2 minutes.
                     OPEN own repository on main. SHOW branch creation, menu edit, and commit.
                     ASK whether main now has the menu. PROOF: switch draft → main → draft.
+                    HOLD this slide for 5 minutes afterward; announce the finish time and help participants.
                     Check understanding before introducing PRs. Branches alone do not enforce review or protect main.
                 </aside>
             </section>
@@ -530,39 +650,62 @@
             </section>
 
             <section class="task">
+                <h2>Where to review the change</h2>
+                <figure>
+                    <img class="official-illustration" src="assets/github-docs/pull-request-tabs-changed-files.png"
+                         width="1308" height="122"
+                         alt="Pull request tabs with Files changed outlined to identify where to inspect the proposed diff.">
+                    <figcaption><a href="https://github.com/github/docs/blob/841308525efb1a0f005369d83c54183068bb65d2/assets/images/help/pull_requests/pull-request-tabs-changed-files.png">GitHub Docs (GitHub and contributors)</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></figcaption>
+                </figure>
+                <p class="small">Read Files changed before merging.<br>Check what will be added or removed, not just the PR title.</p>
+                <aside class="notes">
+                    This is part of the existing twelve-minute PR block.
+                    Point to Files changed, then open the live cafe PR and read its diff.
+                    The example's count is not a target. Use plus/minus symbols as well as color.
+                </aside>
+            </section>
+
+            <section class="task">
                 <h2>Your own PR - 12 min</h2>
-                <ol>
-                    <li>New pull request: base main, compare add-menu</li>
-                    <li>Inspect the diff and create a PR explaining the change</li>
-                    <li>Check main before merging: is the menu there?</li>
-                    <li>Read Files changed, merge, and confirm</li>
-                    <li>Check main again; delete the draft branch if offered</li>
+                <ol class="task-content">
+                    <li>Pull requests → New pull request. Set base: <strong>main</strong>; compare: <strong>add-menu</strong>.</li>
+                    <li>Read the diff → Create pull request. Title: <strong>Add sample cafe menu</strong>.</li>
+                    <li>Description: <strong>Adds a fictional menu so cafe volunteers can see what we serve.</strong> Create the PR.</li>
+                    <li>Check Code → main in another tab: menu still absent.<br>Return to PR → Files changed and read the diff.</li>
+                    <li>Conversation → Merge pull request → confirm. Blocked? Ask for help.</li>
+                    <li>Code → main: menu now present. Delete the draft branch if offered.</li>
                 </ol>
                 <p class="small"><strong>Done when:</strong> The PR is Merged and main contains the menu.</p>
-                <p class="demo">Live demo: source/destination selectors → PR → main before/after merge</p>
+                <p class="demo">Demo optional · Start now or watch first.<br>Then: 8 min to work, ask questions, and get help.</p>
                 <aside class="notes">
+                    BRIEF: 1 minute using the PR concept and review control, then read the task.
+                    DEMO, optional: 3 minutes.
                     OPEN New pull request. SHOW base main / compare add-menu matched to the diagram.
                     ASK whether opening a PR changes main. PROOF: main is unchanged until merge, then includes the menu.
-                    Use Exercise 04. This PR is self-inspected; you cannot approve your own PR.
+                    HOLD this slide for 8 minutes afterward; announce the finish time and help participants.
+                    This PR is self-inspected; you cannot approve your own PR.
                     A different person will read and comment on the next contribution.
                 </aside>
             </section>
 
             <section class="task">
                 <h2>Share and pair - 5 min</h2>
-                <ol>
+                <ol class="task-content">
                     <li>Recheck: fictional practice content only, including history</li>
-                    <li>Post the practice repository URL in the confirmed Slack channel</li>
-                    <li>Use the assigned pair or contribution ring</li>
-                    <li>Know your target and who will contribute to you</li>
+                    <li>When the facilitator confirms the Slack channel and audience, copy your repository URL from the browser and post it there</li>
+                    <li>Use the assigned pair or ring. Open your target's repository; confirm its owner and who will contribute to you.</li>
                 </ol>
-                <p class="diagram-key">Pair: A ↔ B &nbsp; | &nbsp; Ring: A → B → C → A</p>
-                <p class="small">A restricted Slack channel does not make public repositories private.<br>Prefer not to post/publish? Use the agreed demo-repository alternative.</p>
+                <p class="diagram-key"><strong>Done when:</strong> You know your target and incoming contributor.<br>Pair: A ↔ B &nbsp; | &nbsp; Ring: A → B → C → A</p>
+                <p class="small">A restricted Slack channel does not make public repositories private.<br>Prefer not to post/publish? Ask for a demo target and a private assignment.</p>
+                <p class="demo">Demo optional · Watch the link-sharing example, or start.<br>Then: 3 min to share links, confirm assignments, and get help.</p>
                 <aside class="notes">
+                    BRIEF: 1 minute. Confirm the actual channel, audience, and participation alternative.
+                    DEMO, optional: 1 minute for the URL format and pairing example.
                     Confirm the actual channel and audience before anyone posts. Do not post for participants.
                     Show a fictional URL message format; no reusable screenshots of real participants.
+                    HOLD this slide for 3 minutes. Assign and verify pairs or a contribution ring while helping participants.
                     Ensure everyone has exactly one outgoing target and incoming contributor.
-                    Do not assume a private invite enables forking. See Exercise 05 for the access alternative.
+                    Do not assume a private invite enables forking. Offer the prepared public demo target instead.
                 </aside>
             </section>
 
@@ -579,6 +722,28 @@
                 <p class="small">Check the owner/name in the URL, not just the filename.</p>
             </section>
 
+            <section class="task">
+                <h2>Fork and edit - 8 min</h2>
+                <ol class="task-content">
+                    <li>Open your assigned partner's original repository → Fork</li>
+                    <li>Owner: your account. Name: <code>cafe-handbook-contribution</code>, or another available name. Create the fork.</li>
+                    <li>Check the URL now belongs to you. From your fork's main, create <code>add-menu-item</code>.</li>
+                    <li>Edit README.md: under Sample Menu, add <code>- Hot chocolate</code>.<br>Commit to add-menu-item with <strong>Add hot chocolate</strong>.</li>
+                    <li>Open the partner's original main in another tab. Your new item should be absent.</li>
+                </ol>
+                <p class="small"><strong>Done when:</strong> Your fork's draft has the item; the original main does not.</p>
+                <p class="demo">Demo optional · Start now or watch first.<br>Then: 5 min to work, ask questions, and get help.</p>
+                <aside class="notes">
+                    First 8 minutes of the 20-minute contribution block.
+                    BRIEF: 1 minute using the fork concept, then read the task.
+                    DEMO, optional: 2 minutes. OPEN labeled original and fork windows.
+                    SHOW the available fork name, add-menu-item branch, one-line edit, and commit.
+                    ASK whose repository changed. PROOF: original main is unchanged after the fork commit.
+                    HOLD this slide for 5 minutes afterward; announce the finish time and help participants.
+                    Introduce the PR back to the original only after this checkpoint.
+                </aside>
+            </section>
+
             <section>
                 <h2>Then propose a change back</h2>
                 <figure>
@@ -591,46 +756,87 @@
                     </div>
                     <figcaption>Source: your fork's draft. Destination: the partner's original main.</figcaption>
                 </figure>
-                <p class="demo">Live demo: two owners/URLs → fork edit → original unchanged → PR back → owner merges</p>
                 <aside class="notes">
-                    Allow about 5 minutes for this demo within the 20-minute contribution block.
-                    OPEN labeled original and fork windows. SHOW creating a differently named fork,
-                    add-menu-item branch, and one fictional item.
-                    ASK whose repository changed. PROOF: original is unchanged after the fork commit.
-                    SHOW all four base/head and branch selectors. A co-facilitator reads, comments, and merges.
-                    PROOF: original main now contains the item. Screenshots of these states are the backup.
+                    Briefly reconnect the familiar PR concept to different repository owners.
+                    This and the selector illustrations belong to the one-minute briefing for sending the fork PR.
+                    Read the complete task before the optional browser demo. Keep the task visible afterward.
                 </aside>
             </section>
 
             <section class="task">
-                <h2>Send your fork PR</h2>
-                <ol>
-                    <li>Fork your assigned target using an available name</li>
-                    <li>Create add-menu-item in your fork; add one fictional item</li>
-                    <li>Open a PR back to your partner's original main</li>
-                    <li>Send the PR link in the agreed Slack thread or alternative</li>
-                </ol>
-                <p class="small">Name your fork cafe-handbook-contribution if available.<br>Use Exercise 05. The demo, outgoing PR, and incoming review share 20 minutes.</p>
+                <h2>Fork PR: check the destination</h2>
+                <figure>
+                    <img class="official-illustration" src="assets/github-docs/choose-base-fork-and-branch.png"
+                         width="1630" height="346"
+                         alt="Open a pull request page. Base repository octo-org/hello-world and base branch main are outlined on the left as the destination.">
+                    <figcaption>Base repository and base branch = destination.<br><a href="https://github.com/github/docs/blob/841308525efb1a0f005369d83c54183068bb65d2/assets/images/help/pull_requests/choose-base-fork-and-branch.png">GitHub Docs (GitHub and contributors)</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></figcaption>
+                </figure>
+                <p class="small">Our destination: your partner's original repository, branch <strong>main</strong>.</p>
                 <aside class="notes">
-                    After the short demo, allow roughly 8 minutes to contribute and 7 to review/merge.
+                    Use this during the existing fork demo, not as a new timebox.
+                    Point to the two left-hand controls. Choose the assigned original repository and main.
+                    Do not proceed if the PR points into the contributor's own fork instead of the assigned original.
+                </aside>
+            </section>
+
+            <section class="task">
+                <h2>Fork PR: check the source</h2>
+                <figure>
+                    <img class="official-illustration" src="assets/github-docs/choose-head-fork-compare-branch.png"
+                         width="1630" height="346"
+                         alt="Open a pull request page. Head repository octocat/hello-world and compare branch main are outlined on the right as the source.">
+                    <figcaption>Head repository and compare branch = source.<br><a href="https://github.com/github/docs/blob/841308525efb1a0f005369d83c54183068bb65d2/assets/images/help/pull_requests/choose-head-fork-compare-branch.png">GitHub Docs (GitHub and contributors)</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></figcaption>
+                </figure>
+                <p class="small">Our source: your fork's <strong>add-menu-item</strong> branch,<br>not the example's main.</p>
+                <aside class="notes">
+                    Continue the same fork demo. Point to the two right-hand controls.
+                    The screenshots use different owners and compare main; choose your fork and add-menu-item instead.
+                    Ask participants to name the source and destination before creating their PR.
+                </aside>
+            </section>
+
+            <section class="task">
+                <h2>Send your fork PR - 5 min</h2>
+                <ol class="task-content">
+                    <li>In your fork: Contribute → Open pull request</li>
+                    <li>Base repository / branch: <strong>partner's original / main</strong></li>
+                    <li>Head repository / compare: <strong>your fork / add-menu-item</strong></li>
+                    <li>Read diff: one new item. Wrong destination or diff? Stop and ask.</li>
+                    <li>Create pull request. Title: <strong>Add hot chocolate</strong>.<br>Description: <strong>Adds one fictional drink to the sample menu.</strong></li>
+                    <li>Create it, then send its link in your partner's Slack thread or the agreed alternative</li>
+                </ol>
+                <p class="small"><strong>Done when:</strong> Your PR is in the partner's original, not your fork, and they have its link.</p>
+                <p class="demo">Demo optional · Start now or watch first.<br>Then: 3 min to work, ask questions, and get help.</p>
+                <aside class="notes">
+                    Next 5 minutes of the same contribution block: 8 + 5 + 7 = 20.
+                    BRIEF: 1 minute including the source/destination illustrations and task.
+                    DEMO, optional: 1 minute using a prepared fork draft.
+                    If Contribute is unavailable, use Pull requests → New pull request → compare across forks.
                     Check base repository: assigned original; base branch: main.
                     Check head repository: contributor's fork; compare branch: add-menu-item.
+                    HOLD this slide for 3 minutes afterward; announce the finish time and help participants.
                     Do not stop at opening the PR. Continue to the incoming review task.
                 </aside>
             </section>
 
             <section class="task">
-                <h2>Receive, review, and merge</h2>
-                <ol>
-                    <li>Return to your original repository, not your fork</li>
-                    <li>Open the incoming PR and read Files changed</li>
-                    <li>Leave a useful comment; submit any pending review</li>
-                    <li>Merge if appropriate and confirm</li>
-                    <li>Both verify the new item on the destination's main</li>
+                <h2>Review and merge - 7 min</h2>
+                <ol class="task-content">
+                    <li><strong>Your original cafe-handbook</strong> → Pull requests → incoming PR, not your fork</li>
+                    <li>Files changed: read the new item. Is it appropriate?</li>
+                    <li>Conversation: comment on what you checked. Submit any pending review.</li>
+                    <li>If appropriate: Conversation → Merge pull request → confirm.<br>Wrong change? Ask for a correction or help instead.</li>
+                    <li>Both check the destination's Code → main → README.md:<br>new item present; PR marked Merged.</li>
                 </ol>
-                <p class="small">Same 20-minute contribution block, not extra time.<br>Done when: the PR is Merged and the original main contains the item.</p>
+                <p class="small"><strong>Done when:</strong> Comment sent, PR Merged, new item on original main.</p>
+                <p class="demo">Demo optional · Start now or watch first.<br>Then: 5 min to review, merge, verify, and get help.</p>
                 <aside class="notes">
-                    Protect roughly 7 minutes for this part. Everyone now acts as maintainer of their original repository.
+                    Final 7 minutes of the 20-minute contribution block. Protect this time.
+                    BRIEF: 1 minute to explain the maintainer role and read the task.
+                    DEMO, optional: 1 minute with a prepared incoming PR or consenting co-facilitator.
+                    SHOW Files changed, a useful comment, merge, and the original main afterward.
+                    HOLD this slide for 5 minutes afterward; announce the finish time and help participants.
+                    Everyone now acts as maintainer of their original repository.
                     Pending review comments must be submitted. Do not ask authors to approve their own PRs.
                     No conflict-resolution or syncing-forks detour. Keep changes to one item.
                 </aside>
@@ -680,6 +886,21 @@
                     <h3>Issues track follow-up work</h3>
                     <p>A task or question without changing files.</p>
                     <p class="small"><a href="https://github.com/navikt/github-workshop/tree/main/exercises/05-collaboration#optional-issue-practice">Optional issue practice</a></p>
+                </section>
+                <section>
+                    <h2>What did merging do?</h2>
+                    <figure>
+                        <img class="official-illustration" src="assets/github-docs/standard-merge-commit-diagram.png"
+                             width="408" height="282"
+                             alt="Main and Feature share commits A, B, and C. Feature adds D and E; a merge commit F joins those changes into Main.">
+                        <figcaption>The draft's changes join main.<br><a href="https://github.com/github/docs/blob/841308525efb1a0f005369d83c54183068bb65d2/assets/images/help/pull_requests/standard-merge-commit-diagram.png">GitHub Docs (GitHub and contributors)</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></figcaption>
+                    </figure>
+                    <aside class="notes">
+                        Optional follow-up, not part of the timed work periods.
+                        Trace shared history A-C, draft changes D-E, and their join at F.
+                        This official diagram illustrates a merge commit; other methods exist.
+                        The practical proof remains the menu appearing on main after the merge.
+                    </aside>
                 </section>
                 <section>
                     <h3>Further learning</h3>
