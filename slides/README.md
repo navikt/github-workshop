@@ -1,149 +1,72 @@
-# GitHub Pages Deployment
+# Workshop Slides
 
-This repository is configured to host the workshop slides on GitHub Pages.
+The slides follow the [two-hour workshop outline](../WORKSHOP-OUTLINE.md), including a 10-minute break. Files and commits come first; branches, an own-repository PR, and fork-based contributions form the second half. Only further-learning topics are in the appendix.
 
-## 📍 Slides URL
+## Publishing
 
-Once published, your slides will be available at:
-```
-https://yourusername.github.io/github-workshop/slides/
-```
+The existing [Pages workflow](../.github/workflows/pages.yml) publishes the contents of `slides/` as the site root.
 
-Replace `yourusername` with your actual GitHub username.
+**Expected URL after deployment:** https://navikt.github.io/github-workshop/
 
-## 🚀 Setup Instructions
+In repository **Settings → Pages**, choose **GitHub Actions** as the source. The workflow runs on changes under `slides/` pushed to `main`, or through its manual trigger. Publishing and repository settings changes are separate from editing these materials; confirm authorization before performing them.
 
-### Option 1: Enable GitHub Pages (Easiest)
+Because only `slides/` is uploaded, the slides link to exercises on GitHub rather than using relative paths to files outside the deployment artifact.
 
-1. Go to your repository on GitHub
-2. Click **Settings** tab
-3. Click **Pages** in the left sidebar
-4. Under **Source**, select:
-   - Branch: `main`
-   - Folder: `/ (root)`
-5. Click **Save**
-6. Wait 1-2 minutes for deployment
-7. Visit: `https://yourusername.github.io/github-workshop/slides/`
+## Local presentation
 
-### Option 2: Using GitHub Actions (Advanced)
+Open `index.html` in a browser, or serve this directory:
 
-A GitHub Actions workflow can automatically deploy changes. This is already configured if you have `.github/workflows/pages.yml`.
-
-## 🎨 Customizing the Slides
-
-### Change Theme
-
-Edit `slides/index.html` and replace the theme CSS:
-
-```html
-<!-- Current theme (night) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/night.css">
+```bash
+cd slides
+python3 -m http.server 8000
 ```
 
-Available themes:
-- `black.css` - Black background
-- `white.css` - White background
-- `league.css` - Gray background with blue accents
-- `beige.css` - Beige colors
-- `sky.css` - Blue colors
-- `night.css` - Dark theme (current)
-- `serif.css` - Serif fonts
-- `simple.css` - Minimal
-- `solarized.css` - Solarized colors
-- `moon.css` - Dark blue
-- `blood.css` - Dark red
+Then open http://localhost:8000/.
 
-### Add Your Branding
+**Internet is still required:** Reveal.js, its theme, and its plugins load from a CDN. Local HTML alone is not an offline backup. Rehearse on the presentation device and prepare an offline PDF and exercise copies beforehand.
 
-Update the final slide with your repository URL:
+## Controls
 
-```html
-<p class="small">Workshop materials:<br>
-<a href="https://github.com/yourusername/github-workshop">github.com/yourusername/github-workshop</a></p>
-```
+| Key | Action |
+|---|---|
+| Space | Advance through slides, including vertical appendix slides |
+| Arrow keys | Navigate horizontally or vertically |
+| Esc | Overview |
+| F | Fullscreen |
+| S | Speaker notes |
+| B or . | Blank screen |
+| ? | Help |
 
-## ⌨️ Keyboard Controls
+Speaker notes include timeboxes, safety reminders, prediction questions, and explicit browser demo cues.
 
-During presentation:
+## Visual demos
 
-- **Space** or **→** - Next slide
-- **←** - Previous slide
-- **Esc** or **O** - Overview mode (see all slides)
-- **F** - Fullscreen
-- **S** - Speaker notes (if available)
-- **B** or **.** - Pause (black screen)
-- **?** - Help menu
+Concepts appear just before use. Diagrams introduce Git vs. GitHub, persistent copies after an upload, branch isolation, PR direction, and cross-repository ownership. Each diagram has a text caption and should be described aloud.
 
-## 📝 Adding Speaker Notes
+Visible **Live demo** cues identify when to switch to the browser. Notes specify what to open, what to show/change, what to ask, and the visible result to verify. Return to the task slide while participants work.
 
-Add speaker notes to any slide:
+Rehearse these checkpoints:
 
-```html
-<section>
-    <h2>Slide Title</h2>
-    <p>Slide content</p>
-    
-    <aside class="notes">
-        These are speaker notes.
-        Press 'S' during presentation to view them.
-    </aside>
-</section>
-```
+- Editor → commit dialog → saved file and message.
+- Typo correction → new diff → earlier version still available.
+- Draft → main → draft, showing the edit only on the draft.
+- PR source/destination selectors → original main unchanged before merge, updated afterward.
+- Original and fork with different owners → fork commit leaves original unchanged → incoming review and merge update original.
 
-## 🎯 Tips for Presenting
+Prepare sanitized screenshots of those states for backup; they are not included as purported live GitHub captures. Use fictional content, zoom into relevant controls, and keep text instructions available. The [facilitator guide](../FACILITATOR-GUIDE.md) contains the detailed scripts.
 
-1. **Test beforehand**: Open slides in the browser you'll use for presenting
-2. **Use overview mode**: Press `Esc` to see all slides
-3. **Practice navigation**: Get comfortable with keyboard controls
-4. **Fullscreen**: Press `F` for distraction-free presenting
-5. **Print backup**: File → Print → Save as PDF for offline backup
+The Slack activity requires a confirmed channel and audience, assigned recipients, and an alternative for anyone who cannot or does not want to post a public practice repository. The slides do not create or publish anything in Slack.
 
-## 🔧 Local Development
+## Humor and images
 
-To test slides locally:
+The opening meme has its own slide, a visible text question, and descriptive alt text. It is not an overlay and contains no essential task instructions. Read the question aloud; skip the image if it does not load.
 
-1. **Simple option**: Open `slides/index.html` directly in your browser
-2. **Local server** (recommended for testing):
-   ```bash
-   cd slides
-   python -m http.server 8000
-   # Or: python3 -m http.server 8000
-   ```
-   Then visit: `http://localhost:8000`
+The image is externally hosted and may be unavailable. Do not rely on it for the lesson. Only add a local replacement if you have permission to redistribute it; include attribution where required. Keep jokes understandable without prior Git knowledge and avoid covering instructions or making beginners the target.
 
-## 📱 Mobile/Touch Controls
+The text-only filename joke introduces history without an external image dependency.
 
-- Swipe left/right to navigate
-- Pinch to zoom
-- Two-finger tap for overview
+## Customization
 
-## 🌐 Sharing the Slides
+Edit `index.html` to change the title, example, or links. Keep the core outcome and timings aligned with the outline and exercises. Task slides should remain readable while participants work; do not hide their steps behind fragments or memes.
 
-Share the GitHub Pages URL with:
-- Workshop participants (for reference during/after workshop)
-- Other facilitators
-- Anyone interested in the content
-
-The slides work on any modern browser, no installation required!
-
-## ❓ Troubleshooting
-
-**Slides not showing up?**
-- Wait 1-2 minutes after enabling GitHub Pages
-- Check Settings → Pages for deployment status
-- Ensure `slides/index.html` exists in your repository
-- Try hard refresh: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
-
-**Slides look broken?**
-- Check browser console for errors (F12)
-- Ensure you have internet connection (CDN resources)
-- Try a different browser
-
-**Can't navigate slides?**
-- Make sure JavaScript is enabled
-- Try keyboard navigation instead of mouse
-- Check for browser extensions that might interfere
-
----
-
-**Enjoy your presentation! 🎉**
+For a different repository, update the GitHub links and deployment URL together.

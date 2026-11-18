@@ -3,655 +3,601 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub for Dummies - Workshop Presentation</title>
+    <title>GitHub from Scratch - Workshop Presentation</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/night.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
     <style>
         .reveal h1, .reveal h2, .reveal h3 {
             text-transform: none;
         }
-        .reveal .slides section .fragment.highlight-current-blue {
-            opacity: 1;
-            visibility: inherit;
+        .reveal ul, .reveal ol {
+            font-size: 0.85em;
         }
-        .reveal .slides section .fragment.highlight-current-blue.current-fragment {
-            color: #42affa;
-        }
-        .reveal ul {
-            font-size: 0.9em;
-        }
-        .reveal .small {
-            font-size: 0.7em;
+        .reveal .small, .reveal figcaption {
+            font-size: 0.65em;
         }
         .reveal .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
         }
-        .reveal .analogy {
+        .reveal .analogy, .reveal .step {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 1rem;
             border-radius: 8px;
-            border-left: 4px solid #42affa;
+            border: 2px solid #42affa;
         }
-        .reveal .success {
-            color: #50fa7b;
+        .reveal .meme {
+            display: block;
+            max-width: 70%;
+            max-height: 260px;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 8px;
         }
-        .reveal .warning {
-            color: #ffb86c;
+        .reveal .task {
+            text-align: left;
         }
-        .reveal .danger {
-            color: #ff5555;
+        .reveal .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            margin: 1.2rem 0;
+        }
+        .reveal .step {
+            flex: 1;
+            min-width: 0;
+            font-size: 0.75em;
+        }
+        .reveal .step strong, .reveal .step span {
+            display: block;
+        }
+        .reveal .step span {
+            font-size: 0.8em;
+            margin-top: 0.5rem;
+        }
+        .reveal .demo {
+            color: #9cddff;
+            font-size: 0.65em;
+            border-top: 2px solid currentColor;
+            padding-top: 0.6rem;
+        }
+        .reveal .branch-diagram {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .reveal .diff {
+            text-align: left;
+            font-size: 0.7em;
+            line-height: 1.8;
+            padding: 1rem;
+            background: #222;
+        }
+        .reveal .removed {
+            color: #ffb8b8;
+        }
+        .reveal .added {
+            color: #b6f5c2;
+        }
+        .reveal .diagram-key {
+            font-size: 0.7em;
         }
     </style>
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
-            
-            <!-- Title Slide -->
             <section>
-                <h1>GitHub for Dummies</h1>
-                <h3>From Zero to GitHub Hero</h3>
-                <p>A hands-on workshop for everyone</p>
-                <p class="small">Press Space or → to navigate</p>
+                <h1>GitHub from Scratch</h1>
+                <p>Make a change. Propose it. Build on each other's work.</p>
+                <p class="small">2 hours, including a 10-minute break<br>No coding or command line required</p>
+                <p class="small">Space or → to advance. Esc for an overview. S for speaker notes.</p>
             </section>
 
-            <!-- Welcome & Overview -->
             <section>
-                <section>
-                    <h2>Welcome! 👋</h2>
-                    <h3>Today's Goals</h3>
-                    <ul>
-                        <li class="fragment">Learn what GitHub is and why it matters</li>
-                        <li class="fragment">Create your first repository</li>
-                        <li class="fragment">Master the basics: commits, branches, pull requests</li>
-                        <li class="fragment">Collaborate with others</li>
-                        <li class="fragment">Discover practical applications</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Workshop Agenda</h3>
-                    <div class="two-column">
-                        <div>
-                            <h4>Part 1 (45 min)</h4>
-                            <ul class="small">
-                                <li>What is GitHub?</li>
-                                <li>Account Setup</li>
-                                <li>First Repository</li>
-                                <li>Branches</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Part 2 (45 min)</h4>
-                            <ul class="small">
-                                <li>Pull Requests</li>
-                                <li>Collaboration</li>
-                                <li>Issues & Projects</li>
-                                <li>Real-world Uses</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p class="fragment" style="margin-top: 2rem;">🎯 Remember: No "dumb" questions!</p>
-                </section>
-
-                <section>
-                    <h3>Icebreaker</h3>
-                    <h2>What do you hope to learn about GitHub today?</h2>
-                    <p class="small fragment">(Share in chat or raise your hand)</p>
-                </section>
+                <h3>How did GitHub build GitHub without GitHub?</h3>
+                <img class="meme"
+                     src="https://img-9gag-fun.9cache.com/photo/aLnbK4V_460swp.webp"
+                     alt="A puzzled person considers the circular question in the heading.">
+                <p class="small">Git already existed. GitHub isn't required to use it.</p>
+                <aside class="notes">
+                    Keep the opener brief and read the question aloud. It works without the image.
+                    The next visual explains the distinction; do not introduce branch or PR mechanics here.
+                </aside>
             </section>
 
-            <!-- What is GitHub? -->
             <section>
-                <section>
-                    <h2>What is GitHub?</h2>
-                </section>
-
-                <section>
-                    <h3>Version Control Explained</h3>
-                    <div class="analogy">
-                        <p><strong>Like "Track Changes" on steroids</strong></p>
+                <h2>Git and GitHub are different</h2>
+                <figure>
+                    <div class="flow">
+                        <div class="step"><strong>Git</strong><span>Files and recorded versions<br>Works offline, without GitHub</span></div>
+                        <span aria-hidden="true">↔</span>
+                        <div class="step"><strong>GitHub</strong><span>Hosted repositories<br>Discussion and review online</span></div>
                     </div>
-                    <ul class="fragment" style="margin-top: 2rem;">
-                        <li>Every change is saved</li>
-                        <li>You can go back to any previous version</li>
-                        <li>See who changed what and when</li>
-                        <li>Work on multiple versions at once</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Git vs. GitHub</h3>
-                    <div class="two-column">
-                        <div>
-                            <h4>Git</h4>
-                            <ul>
-                                <li>The tool</li>
-                                <li>Tracks changes</li>
-                                <li>Lives on your computer</li>
-                                <li>Command line or GUI</li>
-                            </ul>
-                        </div>
-                        <div class="fragment">
-                            <h4>GitHub</h4>
-                            <ul>
-                                <li>The platform</li>
-                                <li>Hosts projects online</li>
-                                <li>Collaboration features</li>
-                                <li>Web interface</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3>Real-World Analogies</h3>
-                    <ul>
-                        <li class="fragment"><strong>Google Docs</strong> for code (and other files)</li>
-                        <li class="fragment"><strong>Time machine</strong> for your files</li>
-                        <li class="fragment"><strong>Dropbox + collaboration + history</strong></li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>GitHub's Capabilities</h3>
-                    <ul>
-                        <li class="fragment">📁 Store and organize projects</li>
-                        <li class="fragment">⏰ Track changes over time</li>
-                        <li class="fragment">👥 Collaborate with teams</li>
-                        <li class="fragment">🔍 Review and discuss changes</li>
-                        <li class="fragment">🤖 Automate workflows</li>
-                        <li class="fragment">🌟 Showcase projects (portfolio)</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Common Use Cases</h3>
-                    <div class="two-column">
-                        <div>
-                            <ul class="small">
-                                <li>Software development teams</li>
-                                <li>Documentation management</li>
-                                <li>Open source projects</li>
-                                <li>Personal project portfolio</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="small">
-                                <li>Project management</li>
-                                <li>Website hosting</li>
-                                <li>Team handbooks</li>
-                                <li>Writing & publishing</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+                    <figcaption>Git tracks changes. GitHub helps people share and collaborate on them.</figcaption>
+                </figure>
+                <p class="small">Today: GitHub in the browser. It creates Git commits behind the scenes.</p>
+                <aside class="notes">
+                    Point to Git, then GitHub. Git is the version-control tool, not another name for
+                    the command line. GitHub is not simply Git's graphical interface.
+                    No Git installation or commands are needed today.
+                </aside>
             </section>
 
-            <!-- Account Creation -->
             <section>
-                <section>
-                    <h2>Let's Create Your Account!</h2>
-                    <p>Follow along on your laptop</p>
-                </section>
-
-                <section>
-                    <h3>Account Setup Steps</h3>
-                    <ol class="small">
-                        <li>Visit <a href="https://github.com" target="_blank">github.com</a></li>
-                        <li>Click "Sign up"</li>
-                        <li>Enter email address</li>
-                        <li>Create password (strong!)</li>
-                        <li>Choose username (make it professional!)</li>
-                        <li>Verify you're human</li>
-                        <li>Verify email address</li>
-                    </ol>
-                    <p class="fragment" style="margin-top: 2rem;">⚠️ <strong>Username tips:</strong> Professional, memorable, easy to type</p>
-                </section>
-
-                <section>
-                    <h3>Quick Interface Tour</h3>
-                    <ul>
-                        <li class="fragment"><strong>Navigation bar</strong> - Search, notifications, profile</li>
-                        <li class="fragment"><strong>Profile</strong> - Your GitHub identity</li>
-                        <li class="fragment"><strong>Repositories tab</strong> - Your projects</li>
-                        <li class="fragment"><strong>Explore page</strong> - Discover projects</li>
-                    </ul>
-                </section>
+                <h2>A very short history</h2>
+                <figure>
+                    <div class="flow">
+                        <div class="step"><strong>2005: Git</strong><span>Linus Torvalds starts Git<br>for Linux development</span></div>
+                        <span aria-hidden="true">→</span>
+                        <div class="step"><strong>2008: GitHub</strong><span>An online home for Git projects<br>and collaboration</span></div>
+                    </div>
+                    <figcaption>A version-control tool first; a hosting and collaboration service later.</figcaption>
+                </figure>
+                <p class="small"><a href="https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git">Git history</a> · <a href="https://github.blog/news-insights/the-library/we-launched/">GitHub launch: April 10, 2008</a></p>
+                <aside class="notes">
+                    Keep the Git/GitHub explanation and history to about two minutes combined.
+                    In 2005 the Linux project lost free access to its previous tool, BitKeeper.
+                    Linus Torvalds started Git to support fast, distributed work by many contributors.
+                    GitHub launched in 2008, hosting Git projects and adding collaboration tools.
+                </aside>
             </section>
 
-            <!-- Repositories -->
             <section>
-                <section>
-                    <h2>Understanding Repositories</h2>
-                </section>
-
-                <section>
-                    <h3>What is a Repository?</h3>
-                    <div class="analogy">
-                        <p><strong>A project folder with superpowers</strong></p>
-                    </div>
-                    <ul class="fragment" style="margin-top: 2rem;">
-                        <li>Contains all your project files</li>
-                        <li>Tracks complete history of changes</li>
-                        <li>Includes collaboration tools</li>
-                        <li>Can be public or private</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Public vs. Private</h3>
-                    <div class="two-column">
-                        <div>
-                            <h4>Public</h4>
-                            <ul class="small">
-                                <li class="success">✓ Anyone can see</li>
-                                <li class="success">✓ Great for portfolio</li>
-                                <li class="success">✓ Open source</li>
-                                <li class="success">✓ Free</li>
-                            </ul>
-                        </div>
-                        <div class="fragment">
-                            <h4>Private</h4>
-                            <ul class="small">
-                                <li class="success">✓ Only you & collaborators</li>
-                                <li class="success">✓ Sensitive projects</li>
-                                <li class="success">✓ Work in progress</li>
-                                <li class="success">✓ Also free! (With limitations)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3>README Files</h3>
-                    <p><strong>Your project's front door</strong></p>
-                    <ul class="fragment">
-                        <li>First thing people see</li>
-                        <li>Explains what your project is</li>
-                        <li>Provides instructions</li>
-                        <li>Written in Markdown (.md)</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Activity Time! 🚀</h3>
-                    <h4>Create Your First Repository</h4>
-                    <ol class="small">
-                        <li>Click the "+" icon → "New repository"</li>
-                        <li>Name it: <code>my-first-repo</code></li>
-                        <li>Add a description</li>
-                        <li>Choose Public or Private</li>
-                        <li>✅ Check "Add a README file"</li>
-                        <li>Click "Create repository"</li>
-                    </ol>
-                    <p class="fragment" style="margin-top: 1rem;">🎉 Congratulations! You have a repository!</p>
-                </section>
-            </section>
-
-            <!-- Making Changes -->
-            <section>
-                <section>
-                    <h2>Making Your First Changes</h2>
-                </section>
-
-                <section>
-                    <h3>What is a Commit?</h3>
-                    <div class="analogy">
-                        <p><strong>Saving a snapshot with a note</strong></p>
-                    </div>
-                    <p class="fragment" style="margin-top: 2rem;">💾 Save + 📝 Note + ⏰ Timestamp = Commit</p>
-                </section>
-
-                <section>
-                    <h3>Commit Messages Matter!</h3>
-                    <div class="two-column">
-                        <div>
-                            <h4 class="success">✅ Good</h4>
-                            <ul class="small">
-                                <li>"Add contact info to README"</li>
-                                <li>"Fix typo in introduction"</li>
-                                <li>"Update team member list"</li>
-                            </ul>
-                        </div>
-                        <div class="fragment">
-                            <h4 class="danger">❌ Bad</h4>
-                            <ul class="small">
-                                <li>"changes"</li>
-                                <li>"update"</li>
-                                <li>"stuff"</li>
-                                <li>"asdfasdf"</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h3>Activity Time! ✏️</h3>
-                    <h4>Edit Your README</h4>
-                    <ol class="small">
-                        <li>Open your README.md file</li>
-                        <li>Click the pencil icon (Edit)</li>
-                        <li>Add some content about yourself</li>
-                        <li>Scroll down to "Commit changes"</li>
-                        <li>Write a clear commit message</li>
-                        <li>Click "Commit changes"</li>
-                    </ol>
-                    <p class="fragment" style="margin-top: 1rem;">🎉 Your first commit!</p>
-                </section>
-
-                <section>
-                    <h3>View Your History</h3>
-                    <ul>
-                        <li>Click on commit count (e.g., "2 commits")</li>
-                        <li>See all changes over time</li>
-                        <li>Click a commit to see what changed</li>
-                        <li>Green = added, Red = removed</li>
-                    </ul>
-                    <p class="fragment" style="margin-top: 2rem;"><strong>This is time travel for your files! 🚀</strong></p>
-                </section>
-            </section>
-
-            <!-- Break Slide -->
-            <section>
-                <h2>Break Time! ☕</h2>
-                <p>10 minutes</p>
-                <ul class="small">
-                    <li>Stretch</li>
-                    <li>Grab water/coffee</li>
-                    <li>Ask questions</li>
-                    <li>Catch up if needed</li>
+                <h2>Today's finish line</h2>
+                <ul>
+                    <li>Create a repository and record changes</li>
+                    <li>Find and explain what changed</li>
+                    <li>Propose and accept an update in your own project</li>
+                    <li>Exchange an update with another person</li>
                 </ul>
+                <p class="small">One fictional cafe handbook throughout. We'll name each new concept when we need it.</p>
             </section>
 
-            <!-- Branches -->
             <section>
-                <section>
-                    <h2>Branches: Working Safely</h2>
-                </section>
-
-                <section>
-                    <h3>What is a Branch?</h3>
-                    <div class="analogy">
-                        <p><strong>A parallel universe for your project</strong></p>
+                <h2>Our two-hour route</h2>
+                <div class="two-column">
+                    <div>
+                        <h3>First: 55 min</h3>
+                        <ul class="small">
+                            <li>Welcome and safe practice: 15</li>
+                            <li>Account setup: 5</li>
+                            <li>Create repository: 5</li>
+                            <li>Edit/add and commit: 10</li>
+                            <li>History and correction: 10</li>
+                            <li>Independent edit / catch-up: 10</li>
+                        </ul>
                     </div>
-                    <ul class="fragment" style="margin-top: 2rem;">
-                        <li>Experiment without breaking things</li>
-                        <li>Work on features in isolation</li>
-                        <li>Multiple people work simultaneously</li>
-                        <li>Main branch stays safe</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Branch Analogy: Writing a Book</h3>
-                    <ul>
-                        <li><strong>Main branch</strong> = Published manuscript</li>
-                        <li><strong>Feature branch</strong> = Draft of new chapter</li>
-                        <li>Work on draft without changing published version</li>
-                        <li>When happy, merge it into the manuscript</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Activity Time! 🌿</h3>
-                    <h4>Create Your First Branch</h4>
-                    <ol class="small">
-                        <li>Click the branch dropdown (says "main")</li>
-                        <li>Type a new branch name: <code>add-contact-info</code></li>
-                        <li>Click "Create branch"</li>
-                        <li>You're now on the new branch!</li>
-                        <li>Make some changes</li>
-                        <li>Commit the changes</li>
-                    </ol>
-                </section>
-
-                <section>
-                    <h3>The Magic Moment ✨</h3>
-                    <ol>
-                        <li>Switch to your feature branch → See your changes</li>
-                        <li>Switch to main → Changes disappear</li>
-                        <li>Switch back → Changes reappear!</li>
-                    </ol>
-                    <p class="fragment" style="margin-top: 2rem;"><strong>This is the power of branches!</strong></p>
-                </section>
-            </section>
-
-            <!-- Pull Requests -->
-            <section>
-                <section>
-                    <h2>Pull Requests</h2>
-                    <h3>The Professional Way to Merge</h3>
-                </section>
-
-                <section>
-                    <h3>What is a Pull Request?</h3>
-                    <div class="analogy">
-                        <p><strong>"Hey team, can you review my work before we publish?"</strong></p>
+                    <div>
+                        <h3>Then: 55 min</h3>
+                        <ul class="small">
+                            <li>Own-project proposal and merge: 20</li>
+                            <li>Slack links and assignments: 5</li>
+                            <li>Contribute to each other: 20</li>
+                            <li>Verify, questions, reflection: 10</li>
+                        </ul>
                     </div>
-                    <ul class="fragment" style="margin-top: 2rem;">
-                        <li>Propose changes from one branch to another</li>
-                        <li>Team reviews and discusses</li>
-                        <li>Quality control</li>
-                        <li>Knowledge sharing</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Pull Request Workflow</h3>
-                    <ol class="small">
-                        <li class="fragment">Create branch</li>
-                        <li class="fragment">Make changes and commit</li>
-                        <li class="fragment">Open Pull Request</li>
-                        <li class="fragment">Review and discuss</li>
-                        <li class="fragment">Make requested changes</li>
-                        <li class="fragment">Merge to main</li>
-                        <li class="fragment">Delete branch (cleanup)</li>
-                    </ol>
-                </section>
-
-                <section>
-                    <h3>Activity Time! 🔀</h3>
-                    <h4>Create Your First Pull Request</h4>
-                    <ol class="small">
-                        <li>Click "Pull requests" tab</li>
-                        <li>Click "New pull request"</li>
-                        <li>Select your branch to merge into main</li>
-                        <li>Review the changes</li>
-                        <li>Click "Create pull request"</li>
-                        <li>Add title and description</li>
-                        <li>Click "Create pull request"</li>
-                    </ol>
-                </section>
-
-                <section>
-                    <h3>Merge Your PR</h3>
-                    <ol class="small">
-                        <li>Review the "Files changed" tab</li>
-                        <li>Add a comment on a line (optional)</li>
-                        <li>Go back to "Conversation" tab</li>
-                        <li>Click "Merge pull request"</li>
-                        <li>Confirm the merge</li>
-                        <li>Delete the branch</li>
-                    </ol>
-                    <p class="fragment" style="margin-top: 1rem;">🎉 Your changes are now in main!</p>
-                </section>
+                </div>
+                <p class="small">10-minute break between the two parts.</p>
             </section>
 
-            <!-- Collaboration -->
             <section>
-                <section>
-                    <h2>Collaboration: Working with Others</h2>
-                </section>
-
-                <section>
-                    <h3>GitHub Issues</h3>
-                    <p><strong>Your project's to-do list</strong></p>
-                    <ul class="fragment">
-                        <li>📋 Track tasks</li>
-                        <li>🐛 Report bugs</li>
-                        <li>💡 Suggest features</li>
-                        <li>❓ Ask questions</li>
-                        <li>💬 Discuss ideas</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Partner Exercise! 👥</h3>
-                    <h4>Find a Partner</h4>
-                    <ol class="small">
-                        <li>Exchange repository URLs</li>
-                        <li>Visit your partner's repository</li>
-                        <li>Create an issue with a suggestion</li>
-                        <li>Use @mention to notify them</li>
-                        <li>Respond to the issue they created for you</li>
-                    </ol>
-                </section>
-
-                <section>
-                    <h3>Forking</h3>
-                    <p><strong>Make your own copy of someone else's project</strong></p>
-                    <ul class="fragment">
-                        <li>Contributing to projects you don't own</li>
-                        <li>Experimenting with others' code</li>
-                        <li>Creating your own version</li>
-                    </ul>
-                    <p class="fragment" style="margin-top: 2rem;">Fork → Make changes → Pull Request back</p>
-                </section>
+                <h2>Think first, then share</h2>
+                <p>What file would you like to update more confidently?</p>
+                <p class="small">Take a quiet minute. Sharing is optional. Ask for help at any point.</p>
+                <aside class="notes">
+                    Invite a few answers, not a long round-robin. Agree an accessible help signal
+                    and private alternative. Keep a parking lot for advanced questions.
+                    The whole welcome block is 15 minutes, including history, outcome, and safety.
+                </aside>
             </section>
 
-            <!-- Practical Applications -->
             <section>
-                <section>
-                    <h2>GitHub Beyond Code</h2>
-                </section>
-
-                <section>
-                    <h3>Real-World Uses</h3>
-                    <ul class="small">
-                        <li class="fragment">📚 <strong>Documentation teams</strong> - Track policy changes</li>
-                        <li class="fragment">✍️ <strong>Writers</strong> - Collaborate on books/articles</li>
-                        <li class="fragment">🎨 <strong>Designers</strong> - Manage design specs</li>
-                        <li class="fragment">📊 <strong>Data teams</strong> - Version datasets</li>
-                        <li class="fragment">📋 <strong>Project managers</strong> - Track requirements</li>
-                        <li class="fragment">🏫 <strong>Educators</strong> - Share course materials</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>GitHub Projects</h3>
-                    <p><strong>Built-in kanban boards</strong></p>
-                    <ul>
-                        <li>Visual task management</li>
-                        <li>Drag-and-drop interface</li>
-                        <li>Link issues and PRs</li>
-                        <li>Free project boards</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>GitHub Pages</h3>
-                    <p><strong>Free website hosting!</strong></p>
-                    <ul>
-                        <li>Host directly from repository</li>
-                        <li>Perfect for portfolios</li>
-                        <li>Documentation sites</li>
-                        <li>Project landing pages</li>
-                    </ul>
-                    <p class="fragment" style="margin-top: 1rem;"><code>yourusername.github.io</code></p>
-                </section>
+                <h2>Private is not a promise of secrecy</h2>
+                <p><strong>Would it be harmful if this became public?</strong></p>
+                <p>If yes, stop. Check your organization's rules and get guidance before uploading.</p>
+                <p class="small">This applies to private and internal repositories too.<br>Restricted access cannot prevent every mistake, account compromise, or copy.</p>
+                <aside class="notes">
+                    This is a content-suitability check, not a claim that all non-public work is forbidden.
+                    Do not upload sensitive information on the assumption that a visibility setting makes it safe.
+                </aside>
             </section>
 
-            <!-- Next Steps -->
             <section>
-                <section>
-                    <h2>What's Next?</h2>
-                </section>
-
-                <section>
-                    <h3>Continue Learning</h3>
-                    <ul>
-                        <li>🎓 <strong>GitHub Skills</strong> - skills.github.com</li>
-                        <li>📖 <strong>GitHub Docs</strong> - docs.github.com</li>
-                        <li>💬 <strong>Community Forum</strong> - github.community</li>
-                        <li>🎥 <strong>GitHub YouTube</strong> - youtube.com/github</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Practice Suggestions</h3>
-                    <ul>
-                        <li class="fragment">Create a personal portfolio repository</li>
-                        <li class="fragment">Contribute to open source</li>
-                        <li class="fragment">Use GitHub for your next team project</li>
-                        <li class="fragment">Build a GitHub Pages site</li>
-                        <li class="fragment">Explore GitHub Projects for task management</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Next Skills to Learn</h3>
-                    <ul class="small">
-                        <li>Advanced Markdown formatting</li>
-                        <li>GitHub Projects (kanban boards)</li>
-                        <li>GitHub Pages (free websites)</li>
-                        <li>Git command line basics</li>
-                        <li>GitHub Actions (automation)</li>
-                        <li>Collaborating on larger teams</li>
-                    </ul>
-                </section>
-            </section>
-
-            <!-- Wrap Up -->
-            <section>
-                <section>
-                    <h2>You Did It! 🎉</h2>
-                    <h3>What You Learned Today</h3>
-                    <ul>
-                        <li class="fragment">✅ What GitHub is and why it's useful</li>
-                        <li class="fragment">✅ Creating repositories</li>
-                        <li class="fragment">✅ Making commits</li>
-                        <li class="fragment">✅ Working with branches</li>
-                        <li class="fragment">✅ Creating pull requests</li>
-                        <li class="fragment">✅ Collaborating with others</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Key Takeaway</h2>
-                    <div class="analogy">
-                        <h3>"Use it or lose it!"</h3>
-                        <p>The best way to learn GitHub is to use it regularly</p>
+                <h2>Deleting your file may not erase it</h2>
+                <figure>
+                    <div class="flow">
+                        <div class="step"><strong>Uploaded file</strong><span>Later: <del>current file</del><br>Deleted here</span></div>
+                        <span aria-hidden="true">→</span>
+                        <div class="step"><strong>Version history</strong><span>Earlier content<br>may remain</span></div>
+                        <span aria-hidden="true">→</span>
+                        <div class="step"><strong>Downloaded copy</strong><span>Someone else<br>may still have it</span></div>
                     </div>
-                </section>
-
-                <section>
-                    <h2>Q&A</h2>
-                    <h3>Questions?</h3>
-                    <p>Now's your chance to ask anything!</p>
-                </section>
-
-                <section>
-                    <h2>Thank You! 🙏</h2>
-                    <p>Keep learning and building!</p>
-                    <br>
-                    <p class="small">Workshop materials:<br>
-                    <a href="https://github.com/yourusername/github-workshop">github.com/yourusername/github-workshop</a></p>
-                    <br>
-                    <p class="small">Remember: Everyone was a beginner once.<br>You've got this! 💪</p>
-                </section>
+                    <figcaption>You control the upload. You may not control every copy afterward.</figcaption>
+                </figure>
+                <p class="small">Once information spreads, complete removal may be impossible.</p>
+                <aside class="notes">
+                    This diagram is an illustration, not an instruction to upload real information.
+                    Point to the deleted current file, then the still-present history and copy.
+                    Ask: does deleting my copy delete everyone else's? Later the typo demo shows
+                    why a correction does not erase the earlier version.
+                </aside>
             </section>
 
+            <section>
+                <h2>Today: fictional content only</h2>
+                <ul>
+                    <li>No real personal information or internal documents</li>
+                    <li>No passwords, access keys, or recovery codes</li>
+                    <li>Keep verification messages and account details off screen</li>
+                </ul>
+                <p class="small">Accidental sensitive upload? Stop and report through your organization's incident process.<br>Deleting the file alone is not a fix.</p>
+            </section>
+
+            <section class="task">
+                <h2>Account setup - 5 min</h2>
+                <ol>
+                    <li>Sign in at <a href="https://github.com/">github.com</a>, or choose Sign up</li>
+                    <li>Complete verification, including email verification</li>
+                    <li>Find Your repositories and New repository</li>
+                </ol>
+                <p class="small"><strong>Done when:</strong> You can sign in and find repository creation.</p>
+                <p class="demo">Live demo: signup entry point → signed-in demo account → repository navigation</p>
+                <aside class="notes">
+                    OPEN github.com and show the signup entry point. Do not project real credentials or verification messages.
+                    SHOW navigation using an already signed-in demo account.
+                    ASK participants to locate New repository.
+                    PROOF: each can reach that screen. Use Exercise 01; route verification delays to the catch-up buffer.
+                </aside>
+            </section>
+
+            <section>
+                <h2>A repository holds the project</h2>
+                <figure>
+                    <div class="flow">
+                        <div class="step"><strong>cafe-handbook</strong><span>Our project repository</span></div>
+                        <span aria-hidden="true">→</span>
+                        <div class="step"><strong>README.md</strong><span>Its introduction<br>Text with headings and lists</span></div>
+                    </div>
+                    <figcaption>The repository holds files and their committed history.</figcaption>
+                </figure>
+                <p class="small">Public: anyone can read it. Private: access needs permission.<br>Neither private nor internal visibility guarantees secrecy.</p>
+            </section>
+
+            <section class="task">
+                <h2>Create a repository - 5 min</h2>
+                <ol>
+                    <li>Choose New repository and name it <code>cafe-handbook</code></li>
+                    <li>Public supports the fork exercise, if you're comfortable</li>
+                    <li>Otherwise, agree the participation alternative</li>
+                    <li>Select Add a README file and create the repository</li>
+                </ol>
+                <p class="small"><strong>Done when:</strong> You can find the README and explain who can read it.</p>
+                <p class="demo">Live demo: creation form → README → owner/name URL and visibility label</p>
+                <aside class="notes">
+                    OPEN New repository, SHOW creation with a README and fictional description.
+                    ASK who can read it. PROOF: locate owner/name in the URL and the visibility label.
+                    Use Exercise 02, Part 1. Do not pressure anyone to publish their own repository.
+                    Prepared public demo targets support the contribution alternative.
+                </aside>
+            </section>
+
+            <section>
+                <h2>A commit records a version</h2>
+                <figure>
+                    <div class="flow">
+                        <div class="step"><strong>Edit</strong><span>Change the text</span></div>
+                        <span aria-hidden="true">→</span>
+                        <div class="step"><strong>Commit</strong><span>Record a snapshot<br>with a message</span></div>
+                        <span aria-hidden="true">→</span>
+                        <div class="step"><strong>Inspect</strong><span>Find the saved file<br>and commit message</span></div>
+                    </div>
+                    <figcaption>Typing alone does not create a commit.</figcaption>
+                </figure>
+                <p class="small">Useful message: Add cafe welcome and volunteer checklist</p>
+            </section>
+
+            <section class="task">
+                <h2>Edit/add and commit - 10 min</h2>
+                <ol>
+                    <li>Edit README.md with the cafe text from Exercise 02</li>
+                    <li>Keep the deliberate <code>Welcom</code> typo for later</li>
+                    <li>Preview, choose Commit changes, and write a useful message</li>
+                    <li>Commit to main and check your saved file</li>
+                </ol>
+                <p class="small"><strong>Done when:</strong> The handbook and your commit message are visible.</p>
+                <p class="demo">Live demo: editor → Preview → commit dialog → saved file; then Add file</p>
+                <aside class="notes">
+                    OPEN the README editor. SHOW the edit, preview, dialog, and saved result.
+                    ASK whether typing alone records a commit. PROOF: locate the saved text and message.
+                    Briefly SHOW Add file → Create new file with fictional menu.md; participants may try it in the buffer.
+                    Direct commits to main are only a simplification for participants' own disposable practice repositories.
+                </aside>
+            </section>
+
+            <section>
+                <h2>History beats filename archaeology</h2>
+                <p><code>handbook_final_FINAL_really-final.md</code></p>
+                <figure>
+                    <div class="flow">
+                        <div class="step"><strong>First commit</strong><span>Welcome text<br>with a typo</span></div>
+                        <span aria-hidden="true">→</span>
+                        <div class="step"><strong>Later commit</strong><span>Corrected<br>welcome text</span></div>
+                    </div>
+                    <figcaption>History is the sequence of recorded versions. Earlier content remains available.</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <h2>A diff shows what changed</h2>
+                <div class="diff">
+                    <code class="removed">- Welcom to our fictional community cafe!</code><br>
+                    <code class="added">+ Welcome to our fictional community cafe!</code>
+                </div>
+                <p class="small"><code>-</code> Removed line · <code>+</code> Added line<br>Use the symbols as well as color.</p>
+                <aside class="notes">Read both lines aloud and point to the missing and restored letter.</aside>
+            </section>
+
+            <section class="task">
+                <h2>History and recovery - 10 min</h2>
+                <ol>
+                    <li>Find your handbook commit in history and inspect its diff</li>
+                    <li>Return to current Code → main</li>
+                    <li>Change <code>Welcom</code> to <code>Welcome</code> and commit</li>
+                    <li>Inspect the correction, then reopen the earlier version</li>
+                </ol>
+                <p class="small"><strong>Done when:</strong> You can explain the correction and find the old version.</p>
+                <p class="demo">Live demo: earlier commit → correction → new diff → earlier version still available</p>
+                <aside class="notes">
+                    OPEN history and SHOW the typo commit. Return to current main, correct, and commit.
+                    ASK: did the correction erase the earlier version?
+                    PROOF: open the earlier version again. Connect it to the sensitive-data rule.
+                    Never demonstrate this with a real secret. Use Exercise 02, Part 3.
+                </aside>
+            </section>
+
+            <section class="task">
+                <h2>Independent edit / catch-up - 10 min</h2>
+                <ul>
+                    <li>Add fictional Opening Hours</li>
+                    <li>Commit with a descriptive message</li>
+                    <li>Find the diff and explain the added/removed lines</li>
+                </ul>
+                <p class="small">Start individually; help and text instructions are available.<br>Ready early? Add a fictional menu.md file or change one opening time.</p>
+                <aside class="notes">
+                    No live demo first. Use Exercise 02, Part 4. Helpers support delayed account setup.
+                    PROOF: each participant points to a new edit, commit, and diff.
+                    No public speed comparisons. Offer one more independent attempt after assistance.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Break time ☕</h2>
+                <p>10 minutes</p>
+                <p class="small">Step away, stretch, or enjoy some quiet.<br>No catch-up work required.</p>
+                <aside class="notes">Elapsed time 00:55-01:05. Announce the return time and protect the break.</aside>
+            </section>
+
+            <section>
+                <h2>A branch is a separate draft</h2>
+                <figure>
+                    <svg class="branch-diagram" viewBox="0 0 900 220" role="img" aria-labelledby="branch-title branch-description">
+                        <title id="branch-title">A menu draft branches from the current handbook</title>
+                        <desc id="branch-description">Main stays unchanged while add-menu records a new menu commit. No merge has happened.</desc>
+                        <path d="M 220 65 H 845 M 400 65 L 500 165 H 845" fill="none" stroke="#9cddff" stroke-width="5"/>
+                        <circle cx="400" cy="65" r="10" fill="#fff"/>
+                        <circle cx="720" cy="165" r="10" fill="#fff"/>
+                        <g fill="#fff" font-family="sans-serif" font-size="28">
+                            <text x="15" y="75">main</text>
+                            <text x="15" y="175">add-menu</text>
+                            <text x="540" y="45">current handbook</text>
+                            <text x="520" y="210">draft with new menu</text>
+                        </g>
+                    </svg>
+                    <figcaption>Committing on add-menu does not change main.</figcaption>
+                </figure>
+                <p class="small">Predict: will the draft menu appear when we switch to main?</p>
+            </section>
+
+            <section class="task">
+                <h2>Make a draft - 8 min</h2>
+                <ol>
+                    <li>From your own repository's main, create <code>add-menu</code></li>
+                    <li>Add the sample menu from Exercise 03</li>
+                    <li>Commit to add-menu, not main</li>
+                    <li>Switch to main, then back to add-menu</li>
+                </ol>
+                <p class="small"><strong>Done when:</strong> The menu appears on the draft but not main. Don't merge yet.</p>
+                <p class="demo">Live demo: draft edit → commit → main unchanged → draft edit still there</p>
+                <aside class="notes">
+                    OPEN own repository on main. SHOW branch creation, menu edit, and commit.
+                    ASK whether main now has the menu. PROOF: switch draft → main → draft.
+                    Check understanding before introducing PRs. Branches alone do not enforce review or protect main.
+                </aside>
+            </section>
+
+            <section>
+                <h2>A pull request proposes the change</h2>
+                <figure>
+                    <div class="flow">
+                        <div class="step"><strong>FROM add-menu</strong><span>Compare branch<br>Your draft</span></div>
+                        <span aria-hidden="true">→</span>
+                        <div class="step"><strong>Pull request</strong><span>Inspect and discuss<br>the proposed diff</span></div>
+                        <span aria-hidden="true">→</span>
+                        <div class="step"><strong>INTO main</strong><span>Base branch<br>Accept with a merge</span></div>
+                    </div>
+                    <figcaption>Opening a PR proposes an update. Merging accepts it into the destination.</figcaption>
+                </figure>
+                <p class="small">Predict: does opening the PR change main?</p>
+            </section>
+
+            <section class="task">
+                <h2>Your own PR - 12 min</h2>
+                <ol>
+                    <li>New pull request: base main, compare add-menu</li>
+                    <li>Inspect the diff and create a PR explaining the change</li>
+                    <li>Check main before merging: is the menu there?</li>
+                    <li>Read Files changed, merge, and confirm</li>
+                    <li>Check main again; delete the draft branch if offered</li>
+                </ol>
+                <p class="small"><strong>Done when:</strong> The PR is Merged and main contains the menu.</p>
+                <p class="demo">Live demo: source/destination selectors → PR → main before/after merge</p>
+                <aside class="notes">
+                    OPEN New pull request. SHOW base main / compare add-menu matched to the diagram.
+                    ASK whether opening a PR changes main. PROOF: main is unchanged until merge, then includes the menu.
+                    Use Exercise 04. This PR is self-inspected; you cannot approve your own PR.
+                    A different person will read and comment on the next contribution.
+                </aside>
+            </section>
+
+            <section class="task">
+                <h2>Share and pair - 5 min</h2>
+                <ol>
+                    <li>Recheck: fictional practice content only, including history</li>
+                    <li>Post the practice repository URL in the confirmed Slack channel</li>
+                    <li>Use the assigned pair or contribution ring</li>
+                    <li>Know your target and who will contribute to you</li>
+                </ol>
+                <p class="diagram-key">Pair: A ↔ B &nbsp; | &nbsp; Ring: A → B → C → A</p>
+                <p class="small">A restricted Slack channel does not make public repositories private.<br>Prefer not to post/publish? Use the agreed demo-repository alternative.</p>
+                <aside class="notes">
+                    Confirm the actual channel and audience before anyone posts. Do not post for participants.
+                    Show a fictional URL message format; no reusable screenshots of real participants.
+                    Ensure everyone has exactly one outgoing target and incoming contributor.
+                    Do not assume a private invite enables forking. See Exercise 05 for the access alternative.
+                </aside>
+            </section>
+
+            <section>
+                <h2>A fork is your separate repository copy</h2>
+                <figure>
+                    <div class="flow">
+                        <div class="step"><strong>PARTNER / cafe-handbook</strong><span>Original repository<br>Partner controls its main</span></div>
+                        <span aria-hidden="true">→</span>
+                        <div class="step"><strong>YOU / contribution-fork</strong><span>Your separate repository<br>You create a draft here</span></div>
+                    </div>
+                    <figcaption>Fork copies the project into your account. A commit there does not change the original.</figcaption>
+                </figure>
+                <p class="small">Check the owner/name in the URL, not just the filename.</p>
+            </section>
+
+            <section>
+                <h2>Then propose a change back</h2>
+                <figure>
+                    <div class="flow">
+                        <div class="step"><strong>YOUR fork</strong><span>add-menu-item<br>Source / head repository</span></div>
+                        <span aria-hidden="true">→</span>
+                        <div class="step"><strong>PR back</strong><span>Partner reads the diff,<br>comments, and merges</span></div>
+                        <span aria-hidden="true">→</span>
+                        <div class="step"><strong>PARTNER's original</strong><span>main<br>Destination / base repository</span></div>
+                    </div>
+                    <figcaption>Source: your fork's draft. Destination: the partner's original main.</figcaption>
+                </figure>
+                <p class="demo">Live demo: two owners/URLs → fork edit → original unchanged → PR back → owner merges</p>
+                <aside class="notes">
+                    Allow about 5 minutes for this demo within the 20-minute contribution block.
+                    OPEN labeled original and fork windows. SHOW creating a differently named fork,
+                    add-menu-item branch, and one fictional item.
+                    ASK whose repository changed. PROOF: original is unchanged after the fork commit.
+                    SHOW all four base/head and branch selectors. A co-facilitator reads, comments, and merges.
+                    PROOF: original main now contains the item. Screenshots of these states are the backup.
+                </aside>
+            </section>
+
+            <section class="task">
+                <h2>Send your fork PR</h2>
+                <ol>
+                    <li>Fork your assigned target using an available name</li>
+                    <li>Create add-menu-item in your fork; add one fictional item</li>
+                    <li>Open a PR back to your partner's original main</li>
+                    <li>Send the PR link in the agreed Slack thread or alternative</li>
+                </ol>
+                <p class="small">Name your fork cafe-handbook-contribution if available.<br>Use Exercise 05. The demo, outgoing PR, and incoming review share 20 minutes.</p>
+                <aside class="notes">
+                    After the short demo, allow roughly 8 minutes to contribute and 7 to review/merge.
+                    Check base repository: assigned original; base branch: main.
+                    Check head repository: contributor's fork; compare branch: add-menu-item.
+                    Do not stop at opening the PR. Continue to the incoming review task.
+                </aside>
+            </section>
+
+            <section class="task">
+                <h2>Receive, review, and merge</h2>
+                <ol>
+                    <li>Return to your original repository, not your fork</li>
+                    <li>Open the incoming PR and read Files changed</li>
+                    <li>Leave a useful comment; submit any pending review</li>
+                    <li>Merge if appropriate and confirm</li>
+                    <li>Both verify the new item on the destination's main</li>
+                </ol>
+                <p class="small">Same 20-minute contribution block, not extra time.<br>Done when: the PR is Merged and the original main contains the item.</p>
+                <aside class="notes">
+                    Protect roughly 7 minutes for this part. Everyone now acts as maintainer of their original repository.
+                    Pending review comments must be submitted. Do not ask authors to approve their own PRs.
+                    No conflict-resolution or syncing-forks detour. Keep changes to one item.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Verify, discuss, and reflect - 10 min</h2>
+                <ul>
+                    <li>Can I explain my commit diff?</li>
+                    <li>Did I merge a PR in my own repository?</li>
+                    <li>Did my fork PR target the correct original?</li>
+                    <li>Did I review and merge the incoming contribution?</li>
+                    <li>Can we find the new items on original main?</li>
+                </ul>
+                <p class="small">Return to parked questions. What can you do independently? What needs practice?</p>
+                <aside class="notes">
+                    Show or describe the evidence without collecting screenshots or account lists.
+                    Be honest about observed/assisted/unfinished steps.
+                    Address parked questions or agree an owner, resource, and date for follow-up.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Choose your next small change</h2>
+                <p>One fictional handbook edit or PR. A date within seven days.</p>
+                <p class="small">You own the task. Success: a diff you can explain and, for a PR, a verified merge.<br>Keep your commitment private unless you want to share.</p>
+                <p><strong>Before uploading: would it be harmful if this became public?</strong></p>
+                <aside class="notes">
+                    This reflection is part of the final ten minutes, not an extra timebox.
+                    Give quiet thinking time and an optional written/private feedback route.
+                </aside>
+            </section>
+
+            <section>
+                <h2>Thank you!</h2>
+                <p>You can propose a useful change without editing someone else's project directly.</p>
+                <p class="small"><a href="https://github.com/navikt/github-workshop">github.com/navikt/github-workshop</a><br>Exercises, cheat sheet, and next steps</p>
+                <aside class="notes">End the timed workshop here. The following appendix is optional.</aside>
+            </section>
+
+            <section>
+                <section>
+                    <h2>Optional appendix</h2>
+                    <p>Issues, Projects, Pages, and further learning.</p>
+                </section>
+                <section>
+                    <h3>Issues track follow-up work</h3>
+                    <p>A task or question without changing files.</p>
+                    <p class="small"><a href="https://github.com/navikt/github-workshop/tree/main/exercises/05-collaboration#optional-issue-practice">Optional issue practice</a></p>
+                </section>
+                <section>
+                    <h3>Further learning</h3>
+                    <p><a href="https://skills.github.com/">GitHub Skills</a> · <a href="https://docs.github.com/">GitHub Docs</a></p>
+                    <p class="small"><a href="https://github.com/navikt/github-workshop/tree/main/exercises/06-practical-applications">Projects, Pages, and documentation</a><br><a href="https://github.com/navikt/github-workshop/tree/main/resources">Local tools and other resources</a></p>
+                </section>
+            </section>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/zoom/zoom.js"></script>
     <script>
         Reveal.initialize({
@@ -683,7 +629,7 @@
             hideInactiveCursor: true,
             hideCursorTime: 5000,
             previewLinks: false,
-            plugins: [ RevealHighlight, RevealNotes, RevealZoom ]
+            plugins: [ RevealNotes, RevealZoom ]
         });
     </script>
 </body>

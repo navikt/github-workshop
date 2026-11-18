@@ -1,217 +1,156 @@
-# Exercise 02 - Your First Commit
+# Exercise 02 - Your First Repository and Commits
 
-**Time: 15 minutes**  
-**Objective:** Learn to create a repository, edit files, and make commits
+**Time:** 35 minutes, including demos and a catch-up buffer, before the break
 
----
+**Task:** Build a handbook for a fictional community cafe, save changes with commits, and explain what changed.
 
-## What You'll Learn
-- How to create a new repository
-- What a README file is and why it matters
-- How to edit files directly in GitHub
-- How to write good commit messages
-- How to view your project's history
+Use invented content only. Do not add personal contact details, workplace documents, credentials, or other sensitive information, even in a private repository.
 
----
+**Before uploading:** Would it be harmful if this became public? If yes, stop and check organizational rules and get guidance, even for a private or internal repository. Visibility settings cannot prevent every mistake, account compromise, or copy.
 
-## Part 1: Create Your First Repository (5 minutes)
+## Part 1: Create your repository (5 minutes)
 
-A **repository** (or "repo") is like a project folder that tracks all your changes over time. Think of it as a smart folder that remembers every version of your files.
+### Task
 
-### Steps:
+Create `cafe-handbook` with a README.
 
-1. **Click the "+" icon** in the top-right corner of GitHub
-2. Select **"New repository"**
-3. **Name your repository:** Choose something meaningful like:
-   - `my-first-repo`
-   - `learning-github`
-   - `awesome-project`
-   
-   ⚠️ **Note:** Use lowercase letters and hyphens (no spaces!)
+### Steps
 
-4. **Add a description** (optional but recommended):
-   - Example: "My first GitHub repository for learning"
+1. Choose **+ → New repository** or **New** from your repositories page.
+2. Name it `cafe-handbook`.
+3. Add a description: "A fictional cafe handbook for learning GitHub."
+4. Choose visibility:
+   - **Public:** Anyone can read the content and its history. This is the standard path for the later fork exercise, if you're comfortable publishing fictional practice content.
+   - **Private:** Others need permission. A URL alone does not grant access, and private does not guarantee secrecy. Ask the facilitator about the later contribution alternative; you do not have to change visibility.
+5. Select **Add a README file**, then **Create repository**.
+6. Open `README.md`. A README is the project's introduction; `.md` means Markdown, a text-formatting syntax.
 
-5. **Choose visibility:**
-   - **Public:** Anyone can see it (good for portfolios!)
-   - **Private:** Only you and people you invite can see it
+### Done when
 
-6. **✅ Check "Add a README file"**
-   - This creates your first file automatically
+You can find your repository, explain its visibility, and open the README.
 
-7. **Click "Create repository"**
+**Demo checkpoint:** Locate the owner/name in the URL and the visibility label on the repository page.
 
-🎉 **Congratulations!** You've created your first repository!
+## Part 2: Edit/add a file and commit (10 minutes)
 
----
+### Task
 
-## Part 2: Understanding the README (2 minutes)
+Replace the README with a short cafe handbook and make a commit.
 
-The **README.md** file is your project's front page. It's the first thing people see when they visit your repository.
+### Steps
 
-**Why README files matter:**
-- Explains what your project is about
-- Provides instructions for using your project
-- Shows documentation and examples
-- Makes your project look professional
-
-**The `.md` extension means "Markdown"** - a simple way to format text (we'll learn more about this soon!)
-
----
-
-## Part 3: Make Your First Edit (5 minutes)
-
-Now let's edit the README file and make your first **commit**.
-
-### What is a Commit?
-
-A **commit** is like saving a snapshot of your work with a note about what you changed. It's version control in action!
-
-Think of it like:
-- 💾 Save + 📝 Note about changes + ⏰ Timestamp
-
-### Steps:
-
-1. **Open your README.md file** (click on it)
-
-2. **Click the pencil icon** (✏️) in the top-right to edit
-
-3. **Add content to your README.** Here's a template to get started:
+1. Open `README.md` and choose the pencil icon or **Edit file**.
+2. Replace its content with this fictional example. Keep the intentional `Welcom` typo; we'll correct it later.
 
 ```markdown
-# My First Repository
+# Community Cafe Handbook
 
-Welcome to my first GitHub repository! 🎉
+Welcom to our fictional community cafe!
 
-## About Me
-I'm learning to use GitHub for version control and collaboration.
+## What We Serve
+- Coffee
+- Tea
+- Cake
 
-## What I'm Learning
-- Creating repositories
-- Making commits
-- Writing in Markdown
-- Collaborating with others
-
-## My Goals
-- [ ] Create my first repository ✅
-- [ ] Make my first commit
-- [ ] Learn about branches
-- [ ] Make a pull request
-
-## Favorite Things
-- 🍕 Pizza
-- 🎵 Music
-- 📚 Books
-
----
-*This is part of the GitHub for Dummies workshop*
+## Volunteer Checklist
+- [ ] Set out the cups
+- [ ] Check the menu board
+- [ ] Welcome visitors
 ```
 
-4. **Scroll down to "Commit changes"**
+3. Use **Preview** to see how Markdown formats the headings and lists.
+4. Choose **Commit changes** to open the commit dialog.
+5. Write the message `Add cafe welcome and volunteer checklist`.
+6. Choose to commit directly to `main`, then confirm **Commit changes**.
+7. Check that the README shows the saved content.
 
-5. **Write a commit message:**
-   - ✅ Good: "Add personal information to README"
-   - ✅ Good: "Update README with workshop goals"
-   - ❌ Bad: "changes"
-   - ❌ Bad: "update"
+A **commit** records a snapshot with a message. Typing in the editor alone does not create one. Direct commits to `main` are a simplification for your own practice repository, not a rule for workplace projects.
 
-6. **Add an extended description** (optional but good practice):
-   - Explain WHY you made the changes
+### Done when
 
-7. **Choose "Commit directly to the main branch"**
+The README contains the handbook and you can find your commit message.
 
-8. **Click "Commit changes"**
+**Visual demo:** Watch the editor → commit dialog → saved README. Predict whether typing alone creates a recorded version, then check the commit message after saving. The facilitator also briefly shows **Add file → Create new file** using a fictional `menu.md`; you can try adding a file during the buffer if ready.
 
-🎉 **You just made your first commit!**
+## Part 3: History and recovery (10 minutes)
 
----
+### Task
 
-## Part 4: View Your History (3 minutes)
+Inspect your first edit, then fix its typo with another commit.
 
-One of GitHub's superpowers is that it remembers everything. Let's see your project's history.
+### Steps
 
-### Steps:
+1. Return to the repository's **Code** page and open its commit history.
+2. Select `Add cafe welcome and volunteer checklist`.
+3. Read the **diff**, the comparison showing what changed:
+   - `+` marks an added line, usually with a green background.
+   - `-` marks a removed line, usually with a red background.
+4. Find the line containing `Welcom`.
+5. Return to **Code** and check that you're viewing `main`, not browsing an old commit.
+6. Edit the current README: change `Welcom` to `Welcome`.
+7. Commit the correction with `Fix spelling in cafe welcome`.
+8. Open that commit in history. Identify the removed line and its replacement.
 
-1. **Go back to your repository's main page** (click the repository name)
+The earlier commit remains in history. The facilitator shows both versions and asks: did correcting the file erase the old version?
 
-2. **Look for the commit count** (it shows something like "2 commits")
+**Deleting isn't erasing:** A deleted file can remain in history or downloaded copies. Once information has spread, complete removal may be impossible. If sensitive data is uploaded accidentally, stop and report it through your organization's incident process. Do not assume deleting it fixes the exposure; never use real secrets to demonstrate this.
 
-3. **Click on the commit count** to see your history
+### Done when
 
-4. **Click on a specific commit** to see exactly what changed
-   - Green lines = added content
-   - Red lines = removed content
+You can show both commits and explain how the correction appears in the diff.
 
-5. **Click "Browse files"** to see what your project looked like at that point in time
+## Part 4: Try it yourself (10 minutes)
 
-**This is time travel for your files!** 🚀
+### Task
 
----
+Without a live demonstration:
 
-## Challenge: Make More Commits
+1. Add an **Opening Hours** section with fictional hours.
+2. Commit it with a message describing the change.
+3. Find that commit in history.
+4. Explain which lines were added and whether the commit removed anything.
 
-Practice makes perfect! Try these exercises:
+Try individually before comparing with a partner. Reference material and help are available whenever needed; this is practice, not a speed test.
 
-### Easy Challenges:
-1. Add a new section to your README about your hobbies
-2. Add a list of your favorite movies or books
-3. Fix a typo (or intentionally make one, then fix it!)
+This is also the catch-up buffer for setup delays. If you finish early, try **Add file → Create new file**, create `menu.md` with a fictional menu item, and commit it.
 
-### Medium Challenges:
-1. Create a new file called `about.md` and write about yourself
-2. Add images to your README using Markdown: `![Alt text](image-url)`
-3. Create a file called `todo.md` with your project goals
+### Done when
 
-### Markdown Tips:
-```markdown
-# Large Heading
-## Medium Heading
-### Small Heading
+You can point to the section, its commit message, and its diff.
 
-**bold text**
-*italic text*
+### Optional challenge
 
-- Bullet point
-- Another point
+Change one opening time in a separate commit. Predict which line will be removed and which will be added, then check your prediction in history.
 
-1. Numbered item
-2. Another item
+**Break:** Take the scheduled 10-minute break after this part. Branches and PRs follow afterward.
 
-[Link text](https://url.com)
-```
+## Done when
 
----
+- [ ] I can find my repository and README and explain who can read them.
+- [ ] I can edit a file and save it with a descriptive commit message.
+- [ ] I can find a commit and explain its `+` and `-` lines.
+- [ ] I can correct a mistake with a later commit.
+- [ ] I have tried an edit without a live demonstration.
 
-## Key Takeaways
+If you needed help, try one more small edit on your own. That is more useful than rushing into a new topic.
 
-✅ **Repository** = Project folder with superpowers  
-✅ **Commit** = Saving a snapshot with a descriptive message  
-✅ **README.md** = Your project's front page  
-✅ **Markdown** = Simple way to format text  
-✅ **History** = GitHub remembers everything
+## Compare and reflect
 
----
+Optionally explain your diff to a partner or facilitator. For a private repository, either show just the exercise file on your screen or invite your partner and have them accept before sharing the URL. You do not need to make it public or post your username.
 
-## Common Questions
+Consider privately:
 
-**Q: What if I make a mistake?**  
-A: Don't worry! You can always make another commit to fix it. GitHub keeps all versions.
+- What can I now do without help?
+- What still needs practice?
+- What question should we return to before closing?
 
-**Q: Can I delete a commit?**  
-A: It's possible but not necessary for now. Usually, you just make a new commit to fix things.
+## Next
 
-**Q: How often should I commit?**  
-A: Commit whenever you complete a logical chunk of work. Many small commits are better than one giant commit!
+After the break, continue to [Exercise 03: Branches](../03-branches/), then [Exercise 04: Pull Requests](../04-pull-requests/). Together they form the next 20-minute block.
 
-**Q: Do commit messages really matter?**  
-A: YES! Future you (and your teammates) will thank you for clear messages.
+## Quick help
 
----
-
-## Next Steps
-
-Ready to level up? Move on to **Exercise 03 - Branches** to learn how to experiment safely without affecting your main project!
-
----
-
-**Need help?** Check the [Cheat Sheet](../../CHEAT-SHEET.md) or ask your facilitator!
+- **My edit disappeared:** Confirm the repository and branch, then check whether you committed it.
+- **I'm looking at an old version:** Return to **Code** and choose `main` before editing.
+- **I can't find the button:** The UI may have changed; ask for help or consult [GitHub Docs](https://docs.github.com/).
+- **I need a reminder:** Use the [cheat sheet](../../CHEAT-SHEET.md).
